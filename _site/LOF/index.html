@@ -1,0 +1,285 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Local Outlier Factor - Yan Guochen</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Yan Guochen">
+<meta property="og:title" content="Local Outlier Factor">
+
+
+  <link rel="canonical" href="http://localhost:4000/LOF/">
+  <meta property="og:url" content="http://localhost:4000/LOF/">
+
+
+
+  <meta property="og:description" content="异常检测：LOF（Local Outlier Factor）">
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2022-02-08T20:00:00-08:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Yan Guochen",
+      "url" : "http://localhost:4000",
+      "sameAs" : null
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Yan Guochen Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="http://localhost:4000/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="http://localhost:4000/images/apple-touch-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="http://localhost:4000/images/apple-touch-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="http://localhost:4000/images/apple-touch-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="http://localhost:4000/images/apple-touch-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/images/apple-touch-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="manifest" href="http://localhost:4000/images/manifest.json?v=M44lzPylqQ">
+<link rel="mask-icon" href="http://localhost:4000/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="http://localhost:4000/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="http://localhost:4000/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/academicons.css"/>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="http://localhost:4000/">Yan Guochen</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/publications/">Publications</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/year-archive/">Blog Posts</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <h1 id="异常检测loflocal-outlier-factor">异常检测：LOF（Local Outlier Factor）</h1>
+
+<p>Local Outlier Factor（LOF）是基于密度的经典算法（Breuning et,al 2000）。之前的异常检测算法大都是基于统计，或借助聚类算法。但是基于统计的算法需要假设数据服从某种分布，聚类算法往往只能给出点是否是异常点，不能量化异常程度。而LOF则不对数据分布做太多要求，同时能给出每个点的异常程度。</p>
+
+<h2 id="算法步骤">算法步骤</h2>
+
+<h3 id="相关定义">相关定义</h3>
+
+<p><strong>K-distance</strong>, $d_k(x)$: 距离点x第k近的点与点x的距离.</p>
+
+<p><strong>K-distance neighborhood</strong>, $N_k(x)$: 点x的k近邻，其中：</p>
+
+\[|N_k(x)| \geq k\]
+
+<p><strong>reach-distance</strong>:</p>
+
+\[reach-dis_k(P, O) = \max\{d_k(O), d(P,O)\}\]
+
+<p>k值越高，同一邻域内的点的可达距离将会越相似</p>
+
+<p><strong>local reachability density</strong>:</p>
+
+\[lrd(P) = \frac{1}{\frac{\sum_{O \in N_k(P)}reach-dis_k(P,O)}{|N_k(P)|}}\]
+
+<p>点P的局部可达密度是P与P的k近邻内点的平均reach-distance的倒数。</p>
+
+<p><strong>local outlier factor</strong>:</p>
+
+<p>根据局部可达密度的定义，如果一个数据点跟其他点比较疏远的话，那么显然它的局部可达密度就小。<strong>但LOF算法衡量一个数据点的异常程度，并不是看它的绝对局部密度，而是看它跟周围邻近的数据点的相对密度。</strong></p>
+
+<p>这样做的好处是可以允许数据分布不均匀、密度不同的情况。局部异常因子即是用局部相对密度来定义的。</p>
+
+\[LOF_k(P) = \frac{\frac{\sum_{O \in N_k(P)}lrd(O)}{|N_k(P)|}}{lrd(P)}\]
+
+<h3 id="算法">算法</h3>
+
+<ol>
+  <li>对于每个数据点，计算它与其它所有点的距离，并按从近到远排序；</li>
+  <li>对于每个数据点，找到它的 k-nearest-neighbor，计算 LOF 得分;</li>
+  <li>如果LOF值越大，说明越异常，反之如果越小，说明越趋于正常。</li>
+</ol>
+
+<h2 id="优缺点">优缺点</h2>
+
+<h3 id="优点">优点</h3>
+
+<p>LOF 的一个优点是它同时考虑了数据集的局部和全局属性。异常值不是按绝对值确定的，而是相对于它们的邻域点密度确定的。当数据集中存在不同密度的不同集群时，LOF表现仍然良好，比较适用于中等高维的数据集。</p>
+
+<h3 id="缺点">缺点</h3>
+
+<p>LOF算法中关于局部可达密度的定义其实暗含了一个假设，即：<strong>不存在大于等于 k 个重复的点。</strong></p>
+
+<p>当这样的重复点存在的时候，这些点的平均可达距离为零，局部可达密度就变为无穷大，会给计算带来一些麻烦。在实际应用时，为了避免这样的情况出现，可以把 k-distance 改为 k-distinct-distance，不考虑重复的情况。或者，还可以考虑给可达距离都加一个很小的值，避免可达距离等于零。</p>
+
+<p>另外，LOF 算法需要计算数据点两两之间的距离，造成整个算法时间复杂度为$O(N^2)$ 。为了提高算法效率，后续有算法尝试改进。FastLOF （Goldstein，2012)先将整个数据随机的分成多个子集，然后在每个子集里计算 LOF 值。对于那些 LOF 异常得分小于等于 1 的，从数据集里剔除，剩下的在下一轮寻找更合适的 nearest-neighbor，并更新 LOF 值。</p>
+
+<h2 id="应用">应用</h2>
+
+<p>可用于异常检测，数据清洗。</p>
+
+<p>异常检测（anomaly detection）又分为异常值检测和新颖值（奇异值）检测：</p>
+
+<ol>
+  <li>异常值检测（Outlier detection）：训练数据中含有异常值，通过相关算法找到训练数据的中心模式，忽略偏差观测值，从而检测出异常值。</li>
+  <li>奇异值检测（Novelty detection）：训练数据不包含异常值，只含有positive（正常）的数据，通过算法学习其pattern。之后用于检测未曾看到过新数据是否属于这个pattern，如果属于，该新数据是positive，否则negative，即奇异值。</li>
+</ol>
+
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<a href="/sitemap/">Sitemap</a>
+<!-- end custom footer snippets -->
+
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="http://github.com/Youth-49"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <li><a href="http://localhost:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Yan Guochen. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script src="http://localhost:4000/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  </body>
+</html>
+

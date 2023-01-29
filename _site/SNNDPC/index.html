@@ -1,0 +1,338 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>聚类指标和SNNDPC - Yan Guochen</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Yan Guochen">
+<meta property="og:title" content="聚类指标和SNNDPC">
+
+
+  <link rel="canonical" href="http://localhost:4000/SNNDPC/">
+  <meta property="og:url" content="http://localhost:4000/SNNDPC/">
+
+
+
+  <meta property="og:description" content="聚类标准">
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2022-02-25T20:00:00-08:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Yan Guochen",
+      "url" : "http://localhost:4000",
+      "sameAs" : null
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Yan Guochen Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="http://localhost:4000/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="http://localhost:4000/images/apple-touch-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="http://localhost:4000/images/apple-touch-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="http://localhost:4000/images/apple-touch-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="http://localhost:4000/images/apple-touch-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/images/apple-touch-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="manifest" href="http://localhost:4000/images/manifest.json?v=M44lzPylqQ">
+<link rel="mask-icon" href="http://localhost:4000/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="http://localhost:4000/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="http://localhost:4000/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/academicons.css"/>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="http://localhost:4000/">Yan Guochen</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/publications/">Publications</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/year-archive/">Blog Posts</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <h1 id="聚类标准">聚类标准</h1>
+
+<p>Website：<a href="https://www.biaodianfu.com/cluster-score.html">聚类算法评估指标</a></p>
+
+<ul>
+  <li>内部评价指标
+    <ul>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#SSE(和方差)">SSE(和方差)</a></li>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#轮廓系数_Silhouette_Coefficient">轮廓系数 Silhouette Coefficient</a></li>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#CalinskiHarabaz_Index">Calinski-Harabaz Index</a></li>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#Compactness(紧密性)(CP)">Compactness(紧密性)(CP)</a></li>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#Separation(间隔性)(SP)">Separation(间隔性)(SP)</a></li>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#DaviesBouldin_Index(戴维森堡丁指数)(分类适确性指标)(DB)(DBI)">Davies-Bouldin Index(戴维森堡丁指数)(分类适确性指标)(DB)(DBI)</a></li>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#Dunn_Validity_Index_(邓恩指数)(DVI)">Dunn Validity Index (邓恩指数)(DVI)</a></li>
+    </ul>
+  </li>
+  <li>外部评价指标
+    <ul>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#纯度（Purity）">纯度（Purity）</a></li>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#标准化互信息（NMI）">标准化互信息（NMI）</a></li>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#调整互信息AMI（_Adjusted_mutual_information）">调整互信息AMI（ Adjusted mutual information）</a></li>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#Rand_index兰德指数">Rand index兰德指数</a></li>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#调整兰德系数_（Adjusted_Rand_index）">调整兰德系数 （Adjusted Rand index）</a></li>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#F值方法">F值方法</a></li>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#FowlkesMallows_scores">Fowlkes-Mallows scores</a></li>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#调和平均Vmeasure">调和平均V-measure</a></li>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#Jaccard_指数">Jaccard 指数</a></li>
+      <li><a href="https://www.biaodianfu.com/cluster-score.html#Dice_指数">Dice 指数</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="shared-nearest-neighbor-based-clustering-by-fast-search-and-find-of-density-peaks"><a href="[Shared-nearest-neighbor-based clustering by fast search and find of density peaks (liurui.info)](https://resume.liurui.info/asset/Shared-Nearest-Neighbor-Based Clustering by Fast Search and Find of Density Peaks.pdf)">Shared-nearest-neighbor-based clustering by fast search and find of density peaks</a></h1>
+
+<p>指出DPC存在的问题：</p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-DPC-disadvantages.png" alt="" /></p>
+
+<p>SNNDPC提出：</p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Innovation.png" alt="" /></p>
+
+<p>作者认为DPC没有考虑邻域的信息，而SNN-DP通过利用KNN来结合领域的信息。并且提出了计算$\rho$和$delta$的新方式，使得稀疏簇的簇中心也能显著地从decision graph上突出出来。</p>
+
+<h2 id="定义">定义</h2>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Definition1.png" alt="" /></p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Definition2.png" alt="" /></p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Defination3.png" alt="" /></p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Definition4.png" alt="" /></p>
+
+<p>在距离的计算中，SNN-DPC使用了补偿机制，使得在稀疏的簇中，$\delta$的值也可以较高。稀疏簇的簇中心即使密度底，较大的$\delta$也可以使这个簇中心从其他点中pop out。</p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Definition5.png" alt="" /></p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Defination6.png" alt="" /></p>
+
+<p>在一些极端情况下，会出现一个点同时Inevitable Suborde to多个类别的情况。</p>
+
+<p>This circumstance may occasionally partially affect the clustering result. To avoid it, we present some simple but useful methods here:</p>
+
+<ol>
+  <li>Using odd k argument only</li>
+  <li>When it occurs, temporarily add 1 to k, making it an odd number</li>
+  <li>Assigning B to one of them according to the distance from them</li>
+  <li>Assigning B to one of them according to the distance from their centers.</li>
+</ol>
+
+<p>尽可能的保证每个点至多inevitable subordinate to一个点。</p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Defination7.png" alt="" /></p>
+
+<h2 id="算法流程">算法流程</h2>
+
+<p>The overall process is still divided into three steps: calculation of $ρ$ and $δ$, selection of cluster centers and allocation of non-central points.</p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-algo1.png" alt="" /></p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-algo2.png" alt="" /></p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-algo3.png" alt="" /></p>
+
+<p>第一次allocation是将那些inevitable subordinate to某些点的样本进行分类，BFS，初始化一个包含所有聚类中心的队列，然后每次pop front，将inevitable subordinate to这个点的所有点归为该点的类别，并加入队列。\textbf{这样保证簇的扩张是从聚类中心开始向外的，避免了在DPC中存在的一个问题：由于簇的某一部分密度更高，这部分如果被错误归类，周围的点将接连被错误归类}。</p>
+
+<p>第二次allocation是将那些没有inevitable subordinate to任何点的样本进行分类。这些点都possible subordinate to某个或某些点。算法是将遍历所有未分配的点，生成一张allocation matrix，点p的KNN中有点q，且如果q属于第m类，则在矩阵的p-th row和m-th column加1。遍历结束后找到矩阵中值最大的元素，设在矩阵的第i行第j列，则将第i个unallocated point分配给第j类。执行下一次循环重新计算allocation matrix。</p>
+
+<p>这样对每个点的分配都是谨慎的，都尽可能的考虑了包括邻域在内的最多的信息。</p>
+
+<p><strong>Time Complexity:</strong></p>
+
+<p>Algorithm 2: $O(n^2)$</p>
+
+<p>Algorithm 3: $O(\max(k,m)n^2)$</p>
+
+<p>总体时间复杂度: $O(\max(k,m)n^2)$</p>
+
+<p>空间复杂度: $O(n^2)$</p>
+
+<h2 id="case-study">Case Study</h2>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Exp1.png" alt="" /></p>
+
+<p>上面这个图解释了只依据据距离而出现的问题。DPC可能会将B点归为与A同一类，然后进而将B1，B2也归为和B同一类。如果考虑KNN的信息，计算A和B的SNN，发现它们并不inevitable subordinate to对方，说明二者共同的邻居很少。</p>
+
+<p>DPC表现不佳的两个数据集：</p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-DPCinJain.png" alt="" /></p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-DPCinJain_statistics.png" alt="" /></p>
+
+<p>可以看出，DPC错误地将点A作为了一个聚类中心，因为点A密度大且距离最近的密度更高的点的距离也大，真正的聚类中心点C二者都比点A小。</p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-CominPathbase.png" alt="" /></p>
+
+<p>这个数据集反应了DPC在allocation中的不足。由于DPC是按照密度和距离最近的点的类别来分配，图中点C的密度比该簇中心（点A）更高，且离B所在的簇很近，DPC会将C以及周围的点都划分为B簇中的点。</p>
+
+<p>而SNN-DPC的allocation遵循BFS的顺序，严格从聚类中心出发开始拓展，在一定程度上避免了分类错误和连续错误。</p>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<a href="/sitemap/">Sitemap</a>
+<!-- end custom footer snippets -->
+
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="http://github.com/Youth-49"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <li><a href="http://localhost:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Yan Guochen. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script src="http://localhost:4000/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  </body>
+</html>
+

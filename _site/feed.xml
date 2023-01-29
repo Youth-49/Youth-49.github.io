@@ -1,37 +1,1543 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://youth-49.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://youth-49.github.io/" rel="alternate" type="text/html" /><updated>2023-01-29T06:06:11-08:00</updated><id>https://youth-49.github.io/feed.xml</id><title type="html">Yan Guochen</title><subtitle>Undergraduate student in BIT</subtitle><author><name>Yan Guochen</name></author><entry><title type="html">Future Blog Post</title><link href="https://youth-49.github.io/posts/2012/08/blog-post-4/" rel="alternate" type="text/html" title="Future Blog Post" /><published>2199-01-01T00:00:00-08:00</published><updated>2199-01-01T00:00:00-08:00</updated><id>https://youth-49.github.io/posts/2012/08/future-post</id><content type="html" xml:base="https://youth-49.github.io/posts/2012/08/blog-post-4/">This post will show up by default. To disable scheduling of future posts, edit `config.yml` and set `future: false`.</content><author><name>Yan Guochen</name></author><category term="cool posts" /><category term="category1" /><category term="category2" /><summary type="html">This post will show up by default. To disable scheduling of future posts, edit config.yml and set future: false.</summary></entry><entry><title type="html">Blog Post number 4</title><link href="https://youth-49.github.io/posts/2012/08/blog-post-4/" rel="alternate" type="text/html" title="Blog Post number 4" /><published>2015-08-14T00:00:00-08:00</published><updated>2015-08-14T00:00:00-08:00</updated><id>https://youth-49.github.io/posts/2012/08/blog-post-4</id><content type="html" xml:base="https://youth-49.github.io/posts/2012/08/blog-post-4/">This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-29T08:24:34-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yan Guochen</title><subtitle>Undergraduate student in BIT</subtitle><author><name>Yan Guochen</name></author><entry><title type="html">Theory in GCN</title><link href="http://localhost:4000/GNN/" rel="alternate" type="text/html" title="Theory in GCN" /><published>2022-04-28T20:00:00-08:00</published><updated>2022-04-28T20:00:00-08:00</updated><id>http://localhost:4000/GNN</id><content type="html" xml:base="http://localhost:4000/GNN/">&lt;p&gt;[TOC]&lt;/p&gt;
 
-Headings are cool
-======
+&lt;h1 id=&quot;1-谱图理论&quot;&gt;1. 谱图理论&lt;/h1&gt;
 
-You can have many headings
-======
+&lt;p&gt;图神经网络的核心工作是对空间域(Spatial Domain)中节点的Embedding进行卷积操作(即聚合邻居Embedding信息)，然而图数据和图像数据的差别在于节点邻居个数、次序都是不定的，因此传统用于图像上的CNN模型中的卷积操作(Convolution Operator)不能直接用在图上，因此需要从频谱域(Spectral Domain)上重新定义这样的卷积操作再通过卷积定理转换回空间域上。&lt;/p&gt;
 
-Aren't headings cool?
-------</content><author><name>Yan Guochen</name></author><category term="cool posts" /><category term="category1" /><category term="category2" /><summary type="html">This is a sample blog post. Lorem ipsum I can’t remember the rest of lorem ipsum and don’t have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.</summary></entry><entry><title type="html">Blog Post number 3</title><link href="https://youth-49.github.io/posts/2014/08/blog-post-3/" rel="alternate" type="text/html" title="Blog Post number 3" /><published>2014-08-14T00:00:00-08:00</published><updated>2014-08-14T00:00:00-08:00</updated><id>https://youth-49.github.io/posts/2014/08/blog-post-3</id><content type="html" xml:base="https://youth-49.github.io/posts/2014/08/blog-post-3/">This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool. 
+&lt;p&gt;为了在频谱域和空间域中转换，我们借助了傅里叶公式，并且定义了图上傅里叶变换(从空间域变换到频谱域)和图上傅里叶逆变换(从频谱域回到空间域)的变换公式。具体操作是我们将节点的Embedding f(i),i∈(1,⋯,N)$f(i),i\in (1,⋯,N)$通过傅里叶正变换从空间域变换到了频谱域$\hat f$，在频谱域上和卷积核$h$进行卷积操作，再将变换后的节点Embedding通过傅里叶逆变换回到空间域，参与后续的分类等任务。&lt;/p&gt;
 
-Headings are cool
-======
+&lt;p&gt;整个链路可以概括为：1. 空间域上建图，2. 谱域上卷积， 3. 空间域上进行下游任务。&lt;/p&gt;
 
-You can have many headings
-======
+&lt;h2 id=&quot;laplacian-matrix&quot;&gt;Laplacian Matrix&lt;/h2&gt;
 
-Aren't headings cool?
-------</content><author><name>Yan Guochen</name></author><category term="cool posts" /><category term="category1" /><category term="category2" /><summary type="html">This is a sample blog post. Lorem ipsum I can’t remember the rest of lorem ipsum and don’t have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.</summary></entry><entry><title type="html">Blog Post number 2</title><link href="https://youth-49.github.io/posts/2013/08/blog-post-2/" rel="alternate" type="text/html" title="Blog Post number 2" /><published>2013-08-14T00:00:00-08:00</published><updated>2013-08-14T00:00:00-08:00</updated><id>https://youth-49.github.io/posts/2013/08/blog-post-2</id><content type="html" xml:base="https://youth-49.github.io/posts/2013/08/blog-post-2/">This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.
+&lt;p&gt;对于无向图$G = (V, E)$， 定义其Laplacian矩阵为$L = D-A$，因此是一个对称矩阵。Laplacian矩阵还有如下几种拓展定义：&lt;/p&gt;
 
-Headings are cool
-======
+&lt;ul&gt;
+  &lt;li&gt;$L^{sys} = D^{-\frac12}LD^{-\frac12} = I - D^{-\frac12}AD^{-\frac12}$，称为正则化的Laplacian（Symmetric Normalized Laplacian）&lt;/li&gt;
+  &lt;li&gt;$L^{rw} = D^{-1}L$，称为随机游走的Laplacian（Random Walk Normalized Laplacian）&lt;/li&gt;
+&lt;/ul&gt;
 
-You can have many headings
-======
+&lt;p&gt;以上定义下的Laplacian都是实对称矩阵，因此可以进行特征分解。&lt;/p&gt;
 
-Aren't headings cool?
-------</content><author><name>Yan Guochen</name></author><category term="cool posts" /><category term="category1" /><category term="category2" /><summary type="html">This is a sample blog post. Lorem ipsum I can’t remember the rest of lorem ipsum and don’t have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.</summary></entry><entry><title type="html">Blog Post number 1</title><link href="https://youth-49.github.io/posts/2012/08/blog-post-1/" rel="alternate" type="text/html" title="Blog Post number 1" /><published>2012-08-14T00:00:00-08:00</published><updated>2012-08-14T00:00:00-08:00</updated><id>https://youth-49.github.io/posts/2012/08/blog-post-1</id><content type="html" xml:base="https://youth-49.github.io/posts/2012/08/blog-post-1/">This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.
+&lt;h3 id=&quot;laplacian-operator--laplacian-matrix&quot;&gt;Laplacian operator &amp;amp; Laplacian matrix&lt;/h3&gt;
 
-Headings are cool
-======
+&lt;p&gt;&lt;strong&gt;Laplacian opertor $\Delta$&lt;/strong&gt;： 拉普拉斯算子是n维欧几里德空间中的一个二阶微分算子，定义为梯度（$\nabla f$）的散度：$\nabla \cdot \nabla f = \Delta f$，是笛卡尔坐标系中所有非混合二阶偏导数的和：&lt;/p&gt;
 
-You can have many headings
-======
+\[\Delta f = \sum_i^n \frac{\partial^2 f}{\partial x_i^2}\]
 
-Aren't headings cool?
-------</content><author><name>Yan Guochen</name></author><category term="cool posts" /><category term="category1" /><category term="category2" /><summary type="html">This is a sample blog post. Lorem ipsum I can’t remember the rest of lorem ipsum and don’t have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.</summary></entry></feed>
+&lt;p&gt;函数f的拉普拉斯算子也是该函数的海塞矩阵的迹：&lt;/p&gt;
+
+\[\Delta f = tr(H(f))\]
+
+&lt;p&gt;拉普拉斯算子的物理意义是空间二阶导，准确定义是：标量梯度场中的散度，一般可用于描述物理量的流入流出。比如说在二维空间中的温度传播规律，一般可以用拉普拉斯算子来描述。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Laplacian matrix ($\mathcal L$)&lt;/strong&gt;：一种解释是，拉普拉斯矩阵的定义源于拉普拉斯算子，拉普拉斯算子是n维欧式空间中的一个二阶微分算子，当n=2时，退化为二阶平面上的边缘检测算子：&lt;/p&gt;
+
+\[\Delta f(x, y) = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} \\
+= f(x+1, y) + f(x-1, y) + f(x, y+1) + f(x, y-1) - 4f(x, y)\]
+
+&lt;p&gt;可以看出在二维空间上，拉普拉斯算子可以看作一个边缘检测算子，用来检测上下左右与自身的差异：&lt;/p&gt;
+
+\[\begin{bmatrix}
+0&amp;amp;1&amp;amp;0\\
+1&amp;amp;-4&amp;amp;1\\
+0&amp;amp;1&amp;amp;0\\
+\end{bmatrix}\]
+
+&lt;p&gt;同样，在图信号中，拉普拉斯矩阵可以用来衡量节点和周围邻居节点的差异，这里假设每个节点上的值为$x_i, i=1, …, n$。&lt;/p&gt;
+
+\[L\mathbf x = (D-A)\mathbf x = (..., \sum_{v_j \in N(v_i)}(x_i - x_j), ...)^T\]
+
+&lt;p&gt;进一步地，图信号的总变差（Total Variation）为：&lt;/p&gt;
+
+\[\mathbf x^TL \mathbf x = \sum_{v_i} x_i\sum_{v_j \in N(v_i)}(x_i-x_j) = \sum_{(v_i, v_j) \in \mathcal E} (x_i - x_j)^2\]
+
+&lt;p&gt;总变差是一个标量，它将各边上信号的差值进行加和，从而刻画了图信号整体的平滑度。&lt;/p&gt;
+
+&lt;h3 id=&quot;谱分解&quot;&gt;谱分解&lt;/h3&gt;
+
+&lt;p&gt;在这里矩阵的特征分解、对角化、谱分解都是同一个概念，是指将矩阵分解为由其特征值和特征向量表示的矩阵乘积的方法。只有含有n个线性无关的特征向量的n维方阵才可以进行特征分解。&lt;/p&gt;
+
+&lt;p&gt;Laplacian矩阵有如下性质：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;行和为0，且有一个特征值为0&lt;/li&gt;
+  &lt;li&gt;是半正定对称矩阵，有n个线性无关的特征向量，且所有的特征值非负&lt;/li&gt;
+  &lt;li&gt;对于非负无向图，由图G导出的laplacian矩阵L的0特征值的重数等于图G的连通子图的个数K&lt;/li&gt;
+  &lt;li&gt;这些特征向量线性无关，且都可以正交单位化而得到一组正交且模为 1 的向量&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;证明1：行和为0显然，对矩阵求行和相当于右乘一个全1矩阵：$L\cdot \mathbf 1 = 0 \times\mathbf 1$，因此有一个特征值为0&lt;/p&gt;
+
+  &lt;p&gt;证明2：对于任意向量$\mathbf f = [f_1, …, f_n]^T$，有:&lt;/p&gt;
+
+\[\begin{aligned}
+\mathbf f^TL\mathbf f 
+&amp;amp;= \mathbf f^TD\mathbf f - \mathbf f^TA\mathbf f \\
+&amp;amp;= \sum_{i=1}^nd_if_i^2 - \sum_{i, j = 1}^nf_if_ja_{ij} \\
+&amp;amp;= \frac 12( \sum_{i=1}^nd_if_i^2 - 2\sum_{i, j = 1}^nf_if_ja_{ij} + \sum_{j=1}^nd_jf_j^2) \\
+&amp;amp;= \frac12 \sum_{i,j=1}^na_{ij}(f_i-f_j)^2 \geq 0
+\end{aligned}\]
+
+  &lt;p&gt;因此L有n个非负的特征值&lt;/p&gt;
+
+  &lt;p&gt;证明3：&lt;/p&gt;
+
+  &lt;p&gt;先证明K=1时，即图G是联通的。则对于任意n阶向量$\mathbf f$，有$\mathbf f^TL\mathbf f = \frac12(\sum_{i,j=1}^na_{ij}(f_i-f_j)^2) = 0$，且$a_{ij}\geq 0$，则必有$f_i == f_j$，否则，若存在$f_i \neq f_j$，此时必有$a_{ij} = 0$，且对于其他点k，有$f_k \neq f_i$或$f_k\neq f_j$ ，则点按照取值划分等价类至少可以划分成两类，且两类点之间没有边相连，这与图G是一个连通图矛盾。&lt;/p&gt;
+
+  &lt;p&gt;再证明$K &amp;gt; 1$时，此时L是分块对角矩阵（K块），构造向量$\mathbf e_1 = [1,…, 1, 0, …], \mathbf e_2 = [0,…,0,1,…1,0,…], … \mathbf e_k=[0,…0,1, …, 1]$，这K个向量线性无关且都是L关于特征值0的特征向量，得证。&lt;/p&gt;
+
+  &lt;p&gt;性质4可由L是实对称矩阵推出。实对称矩阵具有性质1：实对称矩阵属于不同特征值的特征向量正交；2：对于n阶实对称矩阵L，存在正交矩阵使得$L = U\Lambda U^T$，其中U是由L的特征向量组成的矩阵。&lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;性质4说明了拉普拉斯矩阵具有如下分解&lt;/p&gt;
+
+\[L = U\Lambda U^{-1} = U\Lambda U^T\]
+
+&lt;p&gt;对于归一化的laplacian，有：$\mathbf f^TL\mathbf f = \frac12(\sum_{i,j=1}^na_{ij}(\frac{f_i}{\sqrt{d_i}}-\frac{f_j}{\sqrt{d_j}})^2)$，$\lambda$为$L$的特征值，对应的特征向量为$\mathbf u$ $\Leftrightarrow$ $\lambda$为$L_{sys}$的特征值，对应的特征向量为$D^{\frac12}\mathbf u$&lt;/p&gt;
+
+&lt;p&gt;对于随机游走的laplacian：有：$\mathbf f^TL\mathbf f = \frac12(\sum_{i,j=1}^na_{ij}(\frac{f_i}{\sqrt{d_i}}-f_j)^2)$，$\lambda$为$L$的特征值，对应的特征向量为$\mathbf u$ $\Leftrightarrow$ $L\mathbf u = \lambda D\mathbf u$&lt;/p&gt;
+
+&lt;p&gt;$L^{sys}$和$L^{rw}$都有与L类似的性质。&lt;/p&gt;
+
+&lt;h2 id=&quot;图上的傅里叶变换&quot;&gt;图上的傅里叶变换&lt;/h2&gt;
+
+&lt;h3 id=&quot;正变换从空间域到谱域&quot;&gt;正变换：从空间域到谱域&lt;/h3&gt;
+
+&lt;p&gt;傅里叶变换的定义：&lt;/p&gt;
+
+\[F(w) = \mathcal F[f(t)] = \int f(t)e^{-iwt}dt \\
+F(w) = \mathcal F[f(t)] = \sum_{t=1}^{N}f(t)e^{-iwt}\]
+
+&lt;p&gt;即时域上信号$f(t)$与基函数$e^{-iwt}$的积分，其中基函数满足$\nabla^2 e^{-iwt} = -w^2e^{-iwt}$。经典傅里叶变换有如下规律：傅里叶变换的基函数是拉普拉斯算子的本征函数。类比于广义特征值，可以将$e^{-iwt}$看作$\nabla^2$的特征向量。因此，找到图的laplacian matrix的特征向量，就找到了谱域上的基函数。&lt;/p&gt;
+
+&lt;p&gt;图上的傅里叶变化可以定义为：&lt;/p&gt;
+
+\[F(\lambda_l) = \hat f(
+\lambda_l) = \sum_{i=1}^N f(i)u_l(i)\]
+
+&lt;p&gt;其中$u_l(i)$为特征值$\lambda_l$对应的特征向量的第i个分量。写成矩阵的形式有：&lt;/p&gt;
+
+\[\begin{pmatrix}
+\hat f(\lambda_1)\\
+\hat f(\lambda_2) \\
+\vdots \\
+\hat f(\lambda_N)
+\end{pmatrix}
+= 
+\begin{pmatrix}
+u_1(1)&amp;amp; \cdots&amp;amp; u_1(N)\\
+u_2(1)&amp;amp; \cdots&amp;amp; u_2(N) \\
+\vdots&amp;amp; \ddots&amp;amp; \vdots \\
+u_N(1)&amp;amp; \cdots&amp;amp; u_N(N)
+\end{pmatrix}
+\begin{pmatrix}
+f(1)\\
+f(2) \\
+\vdots \\
+f(N)
+\end{pmatrix}\]
+
+&lt;p&gt;写成矩阵形式即：&lt;/p&gt;
+
+\[F = U^Tf\]
+
+&lt;p&gt;因此，给出点的embedding，左乘特征向量构成的矩阵的转置，即可得到经傅里叶变换得到的节点embedding $\hat f$。注意，是一个图（一个Laplacian）对应一个谱域，谱域的基函数是laplacian的特征向量，任何想转化到这个图的谱域上的函数，都要左乘$U^T$&lt;/p&gt;
+
+&lt;h3 id=&quot;逆变换从谱域到空间域&quot;&gt;逆变换：从谱域到空间域&lt;/h3&gt;
+
+&lt;p&gt;傅里叶变换：&lt;/p&gt;
+
+\[\mathcal F^{-1}[F(w)] = \frac{1}{2\pi}\int F(w)e^{iwt}dw \\
+f(i) = \sum_{l=1}^N\hat f(\lambda_l)u_l(i)\]
+
+&lt;p&gt;这里由于L是实矩阵，特征向量是实向量，共轭后还是自身。&lt;/p&gt;
+
+&lt;p&gt;推广到图上，写成矩阵形式：&lt;/p&gt;
+
+\[\begin{pmatrix}
+f(1) \\
+f(2) \\
+\vdots \\
+f(N)
+\end{pmatrix} 
+= 
+\begin{pmatrix}
+u_1(1) &amp;amp; u_2(1) &amp;amp; \cdots &amp;amp; u_N(1)\\
+u_1(2) &amp;amp; u_2(2) &amp;amp; \cdots &amp;amp; u_N(2)\\
+\vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots\\
+u_1(N) &amp;amp; u_2(N) &amp;amp; \cdots &amp;amp; u_N(N)
+\end{pmatrix}
+\begin{pmatrix}
+\hat f(\lambda_1)\\
+\hat f(\lambda_2) \\
+\vdots \\
+\hat f(\lambda_N)
+\end{pmatrix}\]
+
+&lt;p&gt;即：&lt;/p&gt;
+
+\[f = U\hat f\]
+
+&lt;h2 id=&quot;图上卷积&quot;&gt;图上卷积&lt;/h2&gt;
+
+&lt;p&gt;卷积定理：&lt;/p&gt;
+
+\[f(t)\star h(t) = \mathcal F^{-1}[\hat f(w)\hat h(w)] = \frac{1}{2\pi}\int \hat f(w)\hat h(w) e^{iwt} dw\]
+
+&lt;p&gt;公式中h是一个卷积核。&lt;/p&gt;
+
+&lt;p&gt;推广到图上，给定图上的卷积核$h$（在谱域上是一个对角矩阵，对各频率分量进行增减，因此有$U^Th = diag(\lambda)$）&lt;/p&gt;
+
+\[(h\star f)_G = U[(U^T h)(U^T f)]\]
+
+&lt;p&gt;其中，卷积核在谱域上：$\hat h = U^T h = diag(\hat h(\lambda_i) ), i = 1, …,n$&lt;/p&gt;
+
+&lt;p&gt;因此有：&lt;/p&gt;
+
+\[(h\star f)_G = Udiag(\hat h(\lambda))U^T f\]
+
+&lt;h1 id=&quot;2-gcn结构的演进&quot;&gt;2. GCN结构的演进&lt;/h1&gt;
+
+&lt;p&gt;图上的机器学习任务实际上是找到一个合适的卷积核，适用于目标任务，更直接的，是找到对角线上的N个自由参数的取值。&lt;/p&gt;
+
+&lt;h2 id=&quot;21-spectral-networks-and-locally-connected-networks-on-graphs&quot;&gt;2.1 &lt;a href=&quot;https://arxiv.org/abs/1312.6203&quot;&gt;Spectral Networks and Locally Connected Networks on Graphs&lt;/a&gt;&lt;/h2&gt;
+
+\[y_{out} = \sigma(Ug_\theta(\Lambda)U^Tx)\\
+g_\theta(\Lambda) = \begin{pmatrix}
+\theta_1 &amp;amp; &amp;amp;\\
+ &amp;amp; \ddots &amp;amp; \\
+&amp;amp;  &amp;amp; \theta_n
+\end{pmatrix}\]
+
+&lt;p&gt;存在的问题：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;U是拉普拉斯矩阵L的特征矩阵，而特征分解的复杂度为$O(N^3)$，当节点个数很多的时候这个方法不适用&lt;/li&gt;
+  &lt;li&gt;每一次前向传播(每计算一次$y_{out}$)，都要进行矩阵乘积，计算量很大&lt;/li&gt;
+  &lt;li&gt;卷积核是由$θ_1,⋯,θ_n $这样n个参数构成的，其中n是图中的节点数，对于非常大的图，模型的自由度过高&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;22-convolutional-neural-networks-on-graphs-with-fast-localized-spectral-filtering&quot;&gt;2.2 &lt;a href=&quot;http://arxiv.org/abs/1606.09375&quot;&gt;Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;为防止过拟合，提出一种多项式filter：&lt;/p&gt;
+
+\[g_\theta(\Lambda) = \sum_{k=0}^{K-1}\theta_k\Lambda^k\]
+
+&lt;p&gt;即有：&lt;/p&gt;
+
+\[g_\theta(\Lambda) = \begin{pmatrix}
+\sum_{k=0}^{K-1}\theta_k\lambda_1^k &amp;amp; &amp;amp;\\
+ &amp;amp; \ddots &amp;amp; \\
+&amp;amp;  &amp;amp; \sum_{k=0}^{K-1}\theta_k\lambda_n^k
+\end{pmatrix}\]
+
+&lt;p&gt;因此可简化为：&lt;/p&gt;
+
+\[y_{out} = \sigma(Ug_\theta(\Lambda)U^Tx) = \sigma(\sum_{k=0}^{K-1}\theta_kU\Lambda^kU^Tx) = \sigma(\sum_{k=0}^{K-1}\theta_kL^kx)\]
+
+&lt;p&gt;上式最后一个等号使用了实对称矩阵必可进行相似对角化的性质。&lt;/p&gt;
+
+&lt;p&gt;通过K阶多项式，将图上的卷积限定在了K近邻，优点有：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;模型参数变为K&lt;/li&gt;
+  &lt;li&gt;不再需要特征分解&lt;/li&gt;
+  &lt;li&gt;引入了空间局部性，感受野范围为K，每个节点的embedding更新只与其K-hop内的邻居有关&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;但是，仍需要计算矩阵乘法（计算$L^k$)&lt;/p&gt;
+
+&lt;h2 id=&quot;23-wavelets-on-graphs-via-spectral-graph-theory&quot;&gt;2.3 &lt;a href=&quot;https://hal.inria.fr/inria-00541855&quot;&gt;Wavelets on graphs via spectral graph theory&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;提出一种用Chebyshev多项式（常用于近似，Chebyshev可用于多项式插值，能最大限度的降低龙格现象，并提供多项式在连续函数的最佳一致逼近）近似卷积核的方法，可以用来降低卷积运算的复杂度（上一篇论文中也有提到）&lt;/p&gt;
+
+\[g_\theta(\Lambda) \approx \sum_{k=0}^{K-1}\theta_kT_k(\hat \Lambda)\]
+
+&lt;p&gt;$\theta_k$是Chebyshev多项式的系数，$T_k(\hat \Lambda)$是取$\hat \Lambda = \frac{2\Lambda}{\lambda_{max}}-I$（$\in [-1, 1]$）的Chebyshev多项式.&lt;/p&gt;
+
+&lt;p&gt;Chebyshev多项式是递归定义的：&lt;/p&gt;
+
+\[T_k(\hat\Lambda) = 2\hat\Lambda T_{k-1}(\hat \Lambda)-T_{k-2}(\hat \Lambda) \\
+T_0(\hat \Lambda) = I, T_1(\hat \Lambda)=\hat \Lambda\]
+
+&lt;p&gt;因此我们无需计算矩阵乘法，递推Chebyshev的复杂度为$O(n^2)$，因此计算$g_\theta$的复杂度为$O(Kn^2)$，此时谱图卷积式子：&lt;/p&gt;
+
+\[y_{out} = \sigma(Ug_\theta U^Tx) = \sigma(\sum_{k=0}^{K-1}\theta_kT_k(\hat L)x)\]
+
+&lt;h2 id=&quot;24-semi-supervised-classification-with-graph-convolutional-networks&quot;&gt;2.4 &lt;a href=&quot;https://arxiv.org/abs/1609.02907&quot;&gt;Semi-Supervised Classification with Graph Convolutional Networks&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;在GCN模型中，作者首先做了额外的两个假设：$λ_{max}≈2,K=1$，这两个假设可以大大简化模型。而作者希望假设造成的误差可以通过神经网络参数训练过程来自动适应。此时：&lt;/p&gt;
+
+\[Ug_\theta U^Tx = \theta_0x + \theta_1(L-I)x = \theta_0x+\theta_1(D^{-\frac12}AD^{-\frac12})x\]
+
+&lt;p&gt;令$\theta = \theta_0 = -\theta_1$，则有：&lt;/p&gt;
+
+\[Ug_\theta U^Tx \approx \theta(I+D^{-\frac12}AD^{-\frac12})x\]
+
+&lt;p&gt;这样一个卷积核只有1个参数&lt;/p&gt;
+
+&lt;p&gt;此时$I+D^{-\frac12}AD^{-\frac12}$的特征值在$[0, 2]$之间，多层传播会导致数值不稳定和梯度消失、梯度爆炸的现象，因此本文提出了再正则化（renormalization trick）：&lt;/p&gt;
+
+\[I+D^{-\frac12}AD^{-\frac12} \rightarrow \hat D^{-\frac12}\hat A\hat D^{-\frac12} \\
+\hat A = A+I, \hat D_{ii} = \sum_j \hat A_{ij}\]
+
+&lt;p&gt;输入节点矩阵$X \in \mathbb R^{N\times C}$， C是节点向量的维数，有F个filters：&lt;/p&gt;
+
+\[Y = \sigma(D^{-\frac12}\hat A\hat D^{-\frac12}X\Theta)\]
+
+&lt;p&gt;$\Theta \in \mathbb R^{C \times F}$是filter参数矩阵，$Y \in \mathbb R^{N \times F}$是卷积后的节点矩阵。复杂度为$O(NFC)$&lt;/p&gt;
+
+&lt;h2 id=&quot;appendixgraph-signal-process-perspective&quot;&gt;Appendix（Graph signal process perspective）&lt;/h2&gt;
+
+&lt;p&gt;从图信号处理的角度：&lt;/p&gt;
+
+&lt;p&gt;根据 &lt;a href=&quot;https://ieeexplore.ieee.org/document/6494675&quot;&gt;The emerging field of signal processing on graphs: Extending high-dimensional data analysis to networks and other irregular domains&lt;/a&gt; ，拉普拉斯矩阵的特征值$\Phi = (\phi_1, …, \phi_n)$和特征向量$\Lambda = diag(\lambda_1, …, \lambda_n)$分别扮演着频率（frequency）和傅里叶基（Fourier basis）的作用。&lt;/p&gt;
+
+&lt;p&gt;图信号（&lt;strong&gt;graph signal&lt;/strong&gt;）是一个在图上节点上定义的实值函数$f: \mathcal V \to \mathbb R$，在谱域空间中（以傅里叶基为基地），一个图信号$\mathbf f = (f(v_1), …, f(v_n))^T$，可以被分解为：&lt;/p&gt;
+
+\[\mathbf f = \Phi \mathbf c,\]
+
+&lt;p&gt;其中$\mathbf c = (c_1, …, c_n)^T$，$c_i$是$\phi_i$的参数。&lt;strong&gt;这一步和上文里&amp;lt;逆变换：从谱域到空间域&amp;gt;中公式$\mathbf f = U \mathbf {\hat f}$等价&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;图滤波器（&lt;strong&gt;graph filter&lt;/strong&gt;）被定义为是一个矩阵$G \in \mathbb R^{n\times n}$，根据 &lt;a href=&quot;https://ieeexplore.ieee.org/document/6409473&quot;&gt;Discrete Signal Processing on Graphs&lt;/a&gt; ： G是线性平移不变的（linear shift-invariant），当且仅当存在函数$p(\cdot): \mathbb R \to \mathbb R$，使得$G = \Phi p(\Lambda)\Phi^{-1}$. 其中，$p(\Lambda) = diag(p(\lambda_1, …, \lambda_n))$。这个函数被称为G的频率响应函数（frequency response function）。&lt;/p&gt;
+
+&lt;p&gt;这个定义也解释了为什么前文&lt;图上卷积&gt;中的式子（$(h\star f)_G = Udiag(\hat h(\lambda))U^T f$，其中$Udiag(\hat h(\lambda))U^T$可看做是滤波器，$\hat h()$可以看作是对应的频率响应函数）。&lt;/图上卷积&gt;&lt;/p&gt;
+
+&lt;p&gt;当信号用基函数的线性组合表示时，基函数的系数较小，则这个信号越平滑。对于第i个基函数来说，“平滑程度”可以看作是相邻点之间函数值的差距：&lt;/p&gt;
+
+\[\sum_{(v_j, v_k) \in \mathcal E} w_{jk}[\phi_i(j) - \phi_i(k)]^2 = \phi_i^TL\phi_i = \lambda_i\]
+
+&lt;p&gt;因此，一个平滑的信号应当具有更多的低频分量，即，将一个信号表示为傅里叶基的线性组合时，较大的$\lambda_i$对应的基$\phi_i$的平滑程度越低（即不平滑），此时，如果我们希望平滑图信号，则经过图滤波器后的图信号：&lt;/p&gt;
+
+\[\mathbf {\hat f} = G\mathbf f = \Phi p(\Lambda)\Phi^{-1}\Phi\mathbf c \\
+= \Phi p(\Lambda)\mathbf c \\
+= \sum_{i}^np(\lambda_i)c_i\phi_i\]
+
+&lt;p&gt;因此，对于较大的$\lambda_i$，$p(\lambda_i)$应当较小，反之亦然。&lt;/p&gt;
+
+&lt;p&gt;从这个角度，考察GCN：&lt;/p&gt;
+
+&lt;p&gt;GCN中，认为图卷积$I+D^{-\frac12}AD^{-\frac12}$的特征值在$[0,2)$，多层传播会造成问题，因此利用了 re-normalization 技术，将图卷积变为$\hat D^{-\frac12}\hat A \hat D^{-\frac12}$，则有：&lt;/p&gt;
+
+\[\hat D^{-\frac12}\hat A \hat D^{-\frac12} = I - \hat D^{-\frac12}\hat L \hat D^{-\frac12}\]
+
+&lt;p&gt;将$\hat L$进行谱分解，则有：&lt;/p&gt;
+
+\[\hat D^{-\frac12}\hat L \hat D^{-\frac12} = \Phi \hat \Lambda \Phi^{-1} \\
+I - \hat D^{-\frac12}\hat L \hat D^{-\frac12} = \Phi (I-\hat \Lambda)\Phi^{-1}\]
+
+&lt;p&gt;此时，这个滤波器的频率响应函数为$p(\hat \lambda_i) = 1-\hat \lambda_i$&lt;/p&gt;
+
+&lt;p&gt;这个函数是线性低通的，它对特征值在$[0,2]$（实际上特征值的取值范围达不到2）内的分量有抑制作用。但是，可以看到他对待靠近0和靠近2的特征值是等同的，即这个fiter对高频分量没有良好的抑制作用。&lt;/p&gt;
+
+&lt;p&gt;但是也有研究表明，由于图具有一定的异质性，滤波器保留一定的高频分量是有利的，这可能是RNM filter在实际中不比RW之类的差的原因吧。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/GNN-3.png&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;于是我们可以解释以下问题：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;为什么要Normalized Graph Laplacian：经过normalization，$L^{sys}$和$L^{rw}$的特征值都落在$[0,2]$内。如果不进行normalization，特征值的取值区间是$[0,+\infty)$。考虑上述的频率响应函数，在特征值大于2时，函数将起增强的作用。&lt;/li&gt;
+  &lt;li&gt;为什么要用两层GCN：把$1-\lambda$和$(1-\lambda)^2$的函数图像画出来可以看到，后者（两层GCN）在特征值$[0,2]$区间内抑制效果更好。&lt;/li&gt;
+  &lt;li&gt;为什么要用re-normalization trick：不使用这项trick之前，可以计算图卷积的特征值落在$[0,2]$之间（$I+D^{-\frac12}AD^{-\frac12} = 2I-D^{-\frac12}LD^{-\frac12}$）。经过re-normalization，给邻接矩阵和度数矩阵添加自环后，特征值收缩到$[0, 1.5]$，因此避免了增强那些在2附近特征值，同时降低了噪声。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/GNN-2.png&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;3-空域卷积&quot;&gt;3. 空域卷积&lt;/h1&gt;
+
+&lt;p&gt;谱域卷积的缺点：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;不适合有向图，而现实中很多图都是有向图&lt;/li&gt;
+  &lt;li&gt;训练时图的结构不能更改&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/weixin_45901519/article/details/106492963?spm=1001.2014.3001.5502&quot;&gt;图卷积神经网络笔记——第三章：空域图卷积介绍（1）_Ma Sizhou-CSDN博客_基于空域的图卷积&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;4-graphsage&quot;&gt;4. GraphSAGE&lt;/h1&gt;
+
+&lt;p&gt;[&lt;a href=&quot;https://arxiv.org/abs/1706.02216&quot;&gt;1706.02216] Inductive Representation Learning on Large Graphs (arxiv.org)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;graphSAGE是为了解决现实中无法将完整的图数据一次放入内存或显存的问题以及无法获得完整图结构的问题。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;inductive learning：训练时只知道训练集信息&lt;/li&gt;
+  &lt;li&gt;transductive learning：训练时用到了测试机的信息&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;GraphSAGE是inductive的，训练时只保留训练集的边，利用已知节点的信息为未知节点生成embedding，GraphSAGE 取自 Graph SAmple and aggreGatE，指将邻居采样，并聚合。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/GNN-1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;其中，K是aggregator的数量，也是权重举矩阵的数量（每一层聚合器和权重矩阵都是共享的），也是网络的层数（聚合K-hop邻域内的信息）&lt;/p&gt;
+
+&lt;p&gt;GraphSAGE中的采样：对每个节点采同样个数的邻居样本，以形成minibatch，对于采样个数大于点的度数的情况，采用放回抽入以获得足够的邻居样本。&lt;/p&gt;
+
+&lt;p&gt;聚合器采用了Mean Aggregator、Pool Aggregator、LSTM Aggregator。实验上Mean aggregator效果最好，LSTM 需要进行诸如乱序处理将有序模型变为无序模型。&lt;/p&gt;
+
+&lt;p&gt;参数学习：对于有监督的任务，可以使用每个节点pred和true的交叉熵作为损失函数；无监督时，可设计如下损失函数：&lt;/p&gt;
+
+\[J_G(\mathbf z_u) = -\log(\sigma(\mathbf z_u^T\mathbf z_v)) - Q\mathbb E_{v_n \sim P_n(v)}\log(\sigma(-\mathbf z_u^T\mathbf z_v))\]
+
+&lt;p&gt;该损失函数由两部分组成，第一项是使邻居点相似，第二项是使非邻居节点相异（&lt;strong&gt;负采样&lt;/strong&gt;）&lt;/p&gt;
+
+&lt;h1 id=&quot;5-gat&quot;&gt;5. GAT&lt;/h1&gt;
+
+&lt;p&gt;目前主要有三种注意力机制算法，它们分别是：学习注意力权重(Learn attention weights)，基于相似性的注意力(Similarity-based attention)，注意力引导的随机游走(Attention-guided walk)。这三种注意力机制都可以用来生成邻居的相对重要性。&lt;/p&gt;
+
+&lt;h2 id=&quot;51-学习注意力权重velickovic-et-al-2018&quot;&gt;5.1 学习注意力权重&lt;a href=&quot;https://arxiv.org/abs/1710.10903&quot;&gt;Velickovic et al. 2018&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;节点j对节点i的注意力权重：&lt;/p&gt;
+
+\[\alpha_{i,j} = \frac{\exp{(LeakyReLU(\mathbf a [W_{x_i}||W_{x_j}]))}}{\sum_{k \in N(i)}\exp{(LeakyReLU(\mathbf a [W_{x_i}||W_{x_k}]))}}\]
+
+&lt;p&gt;$\mathbf a, \mathbf W$分别是可学习得参数向量和参数矩阵.&lt;/p&gt;
+
+&lt;p&gt;$|$表示拼接.&lt;/p&gt;
+
+&lt;h2 id=&quot;52-基于相似性得注意力thekumparampil-et-al-2018&quot;&gt;5.2 基于相似性得注意力&lt;a href=&quot;http://arxiv.org/abs/1803.03735&quot;&gt;TheKumparampil et al. 2018&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;直接通过节点得向量表示计算相似性&lt;/p&gt;
+
+\[\alpha_{i,j} = \frac{\exp({\beta cos(W_{x_i}, W_{x_j})})}{\sum_{k \in N(i)}\exp{(\beta cos(W_{x_i}, W_{x_k}))}}\]
+
+&lt;p&gt;$\beta$是一个可学习得bias，$W$是一个可训练的参数矩阵。&lt;/p&gt;
+
+&lt;h2 id=&quot;53-注意力引导的游走法&quot;&gt;5.3 注意力引导的游走法&lt;/h2&gt;
+
+&lt;p&gt;以&lt;a href=&quot;http://ryanrossi.com/pubs/KDD18-graph-attention-model.pdf&quot;&gt;Lee et al. 2018&lt;/a&gt; 作为例子：&lt;/p&gt;
+
+&lt;p&gt;GAM方法在输入图进行一系列的随机游走，并且通过RNN对已访问节点进行编码，构建子图embedding。时间t的RNN隐藏状态 $h_t∈R_h$ 编码了随机游走中 $1,⋯,t$ 步访问到的节点。然后，注意力机制被定义为函数 $f^′:R_h→R_k$，用于将输入的隐向量$f′(h_t)=r_{t+1}$映射到一个k维向量中，可以通过比较这k维向量每一维的数值确定下一步需要优先游走到哪种类型的节点(假设一共有k种节点类型)。&lt;/p&gt;
+
+&lt;h1 id=&quot;6-概览gnn模型&quot;&gt;6. 概览GNN模型&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://archwalker.github.io/blog/2019/11/10/GNN-Go-Through-Main-Models.html&quot;&gt;GNN 教程(特别篇)：一文遍览GNN的代表模型 - ArchWalker&lt;/a&gt;&lt;/p&gt;</content><author><name>Yan Guochen</name></author><summary type="html">[TOC]</summary></entry><entry><title type="html">Density Peak Cluster</title><link href="http://localhost:4000/DPC/" rel="alternate" type="text/html" title="Density Peak Cluster" /><published>2022-02-25T20:00:00-08:00</published><updated>2022-02-25T20:00:00-08:00</updated><id>http://localhost:4000/DPC</id><content type="html" xml:base="http://localhost:4000/DPC/">&lt;h2 id=&quot;density-peak-cluster&quot;&gt;Density Peak Cluster&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://sites.psu.edu/mcnl/files/2017/03/9-2dhti48.pdf&quot;&gt;Clustering by fast search and find of density peaks&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;核心思想&quot;&gt;核心思想&lt;/h3&gt;
+
+&lt;p&gt;文章认为，聚类中心应具有以下特点:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;密度大，即领域内点的数量多&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;与其他密度更大的点距离更远&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;文章引入密度$\rho$和距离$\delta$的定义，利用decision graph找出聚类中心点，再将剩余的点指定为某一个聚类或噪声。&lt;/p&gt;
+
+&lt;p&gt;优点：克服了之前聚类算法只能发现类球状cluster的缺陷，且对数据分布空间的维数不敏感，在高维空间中也有良好的分类效果。可以避免离群点和噪音的干扰。&lt;/p&gt;
+
+&lt;h3 id=&quot;定义&quot;&gt;定义&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;local density $\rho_i$, 有两种计算方法：&lt;/p&gt;
+
+    &lt;p&gt;Cut-off kernel:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+\[\rho_i = \sum_j \chi(d_{ij}-d_c)\]
+
+&lt;p&gt;where $\chi(x) = 1$, if $x &amp;lt; 0$; $\chi(x) = 0$ otherwise.&lt;/p&gt;
+
+&lt;p&gt;​		Gaussian kernel:&lt;/p&gt;
+
+\[\rho_i = \sum_j e^{-(\frac{d_{ij}}{d_c})^2}\]
+
+&lt;p&gt;其中，Gaussian kernel得到的是连续值，上述两种方式都满足“在点i邻域内的点越多，$\rho_i$越大”。$d_c$是截断距离，需要预先指定。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;distance $\delta_i$&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\delta_i = \min_{j:\rho_j &amp;gt; \rho_i} (d_{ij})\]
+
+&lt;p&gt;对于$\rho$最大的点，我们定义：&lt;/p&gt;
+
+\[\delta_i = \max_j (d_{ij})\]
+
+&lt;p&gt;另一种定义：    设${q_i}&lt;em&gt;{i=1}^N$是${\rho_i}&lt;/em&gt;{i=1}^{N}$的降序序列的下标序，满足：    \(\rho_{q_1} \geq \rho_{q_2} \geq \cdots \geq \rho_{q_N}\)    则：&lt;/p&gt;
+
+&lt;p&gt;则：&lt;/p&gt;
+
+\[\delta_i = \left\{
+    \begin{aligned}
+    \max_{j\geq 2}(\delta_{q_j}) &amp;amp; &amp;amp; i = 1\\
+    \min_{j&amp;lt;i} (d_{q_iq_j}) &amp;amp; &amp;amp; i \geq 2\\
+    \end{aligned}
+    \right.\]
+
+&lt;p&gt;在原定义中，当点i具有最大local density时，$\delta$定义为离点i距离最远的点与点i的距离，否则，$\delta$为距离点i最近且local density更大的点离点i的距离。&lt;/p&gt;
+
+&lt;p&gt;这一做法的一个问题是，如果存在两个点i, j同属一个cluster，且local density相同且都较大，如果此时他们距离其他聚类中心的距离都较远（即$\delta$较大），则这两个点都会被作为聚类中心。但按照另一种定义，由于事先按照$\rho$排了序，排序算法会将其中的某一个排到前面，排到后面的那个点的$\delta$会小于等于被这两个点之间的距离，在decision graph中不会作为聚类中心。而且对于点$q_1$，$\delta = \max_{j\geq 2}(\delta_{q_j})$也已经足够大。&lt;/p&gt;
+
+&lt;p&gt;但是似乎也不是一定正确，有些情况下确实要按照原定义，将两个距离很近且local density很大的点作为两个聚类中心。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;decision graph: 以$\rho$为纵轴，$\delta$为横轴，所有数据点按照坐标$(\delta_i, \rho_i)$放置，可以看到潜在的聚类中心由于$\rho$和$\delta$都较大，会明显偏离其他点，聚类中心周围的点$\rho$较大而$\delta$很小，离群点$\rho$很小，$\delta$很大。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/DPC-decisiongraph.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;但是，需要主观地选择聚类中心，且decision graph有时很难确定某些点是否是聚类中心。文中给出一种方案：计算$\gamma_i = \rho_i \delta_i$，得到${\gamma_i}_{i = 1}^{N}$序列并以i为横轴，$\gamma$为纵轴画图，按$\gamma$从大到小选择若干个即可。“若干个”的选取依据：有聚类中心到非聚类中心有明显的突变。另外随机生成的点的$\gamma$应当符合power law。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/DPC-powerlaw.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;算法描述&quot;&gt;算法描述&lt;/h3&gt;
+
+&lt;p&gt;设数据集$S = {x_i}_{i = 1}^N$,有$n_c$个cluster。&lt;/p&gt;
+
+&lt;p&gt;${m_i}&lt;em&gt;{i=1}^{n_c}$: 聚类中心的下标列，$x&lt;/em&gt;{m_i}$是第i个聚类的中心&lt;/p&gt;
+
+&lt;p&gt;$d_{max}$: 数据集中最远的两个点的距离。&lt;/p&gt;
+
+&lt;p&gt;${n_i}_{i=1}^N$: 比第i个点密度更大的点中离第i个点最近的点的标号，即：&lt;/p&gt;
+
+\[n_{q_i} = \left\{
+\begin{aligned}
+\mathop{argmin}_{q_j, j&amp;lt;i}(d_{q_iq_j}) &amp;amp; &amp;amp; i \geq 2\\
+0 &amp;amp; &amp;amp; i = 1\\
+\end{aligned}
+\right.\]
+
+&lt;p&gt;确定好聚类中心后，将使用$n_i$确定非聚类中心的归属。&lt;/p&gt;
+
+&lt;p&gt;${h_i}_{i=1}^N$: 标识该点是cluster core(=0)还是cluster halo(=1)，文中指出cluster halo指聚类的边缘地带，local density较低。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;给定参数percent并确认$d_c$&lt;/li&gt;
+  &lt;li&gt;计算距离$d_{ij}$&lt;/li&gt;
+  &lt;li&gt;计算$\rho_i$并排序，生成下标序${q_i}$&lt;/li&gt;
+  &lt;li&gt;计算$\delta_i$和$n_i$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/DPC-algo1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;确定聚类中心，并初始化${c_i}$:&lt;/li&gt;
+&lt;/ul&gt;
+
+\[c_{i} = \left\{
+        \begin{aligned}
+        k &amp;amp; &amp;amp; \mbox{点i是第k个聚类中心}\\
+        0 &amp;amp; &amp;amp; \mbox{点i不是聚类中心}\\
+        \end{aligned}
+        \right.\]
+
+&lt;ul&gt;
+  &lt;li&gt;对非聚类中心归类&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/DPC-algo2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在每个cluster中划分core和halo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/DPC-algo3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;算法细节&quot;&gt;算法细节&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;参数percent和$d_c$的选取&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;论文中指出，$d_c$的选取应当使得每个点的平均邻居数为总数的$1\%-2\%$，可按如下方式选则$d_c$: 1. 对所有距离排序得到升序序列${d_i}_{i=1}^M$，2.  令$0.01 &amp;lt; percent &amp;lt; 0.02$，取升序序列第$percent \times M$个元素作为$d_c$。这里$M = \frac 12 N(N-1)$。每个点与剩余的N-1个点都有距离，共$N(N-1)$个距离，取$d_k$作为$d_c$，则一共有$\frac{k}{M}N(N-1)$条边会被统计，平均到每个点上，有$\frac{k}{M}(N-1) \approx \frac{k}{M}N$个邻居，因此，取$k = percent\times M$即可满足论文要求。&lt;/p&gt;
+
+&lt;p&gt;$d_c$应该是一个hyperparameter，应当依照经验或其他算法事先选定。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;点对距离的计算&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;计算点对的时间复杂度和空间复杂度是$N^2$，空间开销过大是一个问题，对于数据量较大的数据集，算法运行所需要的内存太大。可以不事先计算距离，需要的时候在计算，但是时间开销多一项$N^2$。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对非聚类中心点的归类&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;按照$\rho$从大到小，依据${n_i}$归类。是一种自顶向下的方式。&lt;/p&gt;
+
+&lt;h3 id=&quot;存在的问题&quot;&gt;存在的问题&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对噪声的识别准确度不足，会把本不应当是噪声的点归为噪声：当簇与簇之间距离很近时，重叠的halo区域会比较大。&lt;/li&gt;
+  &lt;li&gt;$d_c$的选取太过简单，依靠“期望”的求法要求各簇的统计量（如密度、距离）方差尽可能小。可以通过再聚类，多次聚类的方法缓解。&lt;/li&gt;
+  &lt;li&gt;可以尝试归一化$\rho$和$\delta$。&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Yan Guochen</name></author><summary type="html">Density Peak Cluster</summary></entry><entry><title type="html">聚类指标和SNNDPC</title><link href="http://localhost:4000/SNNDPC/" rel="alternate" type="text/html" title="聚类指标和SNNDPC" /><published>2022-02-25T20:00:00-08:00</published><updated>2022-02-25T20:00:00-08:00</updated><id>http://localhost:4000/SNNDPC</id><content type="html" xml:base="http://localhost:4000/SNNDPC/">&lt;h1 id=&quot;聚类标准&quot;&gt;聚类标准&lt;/h1&gt;
+
+&lt;p&gt;Website：&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html&quot;&gt;聚类算法评估指标&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;内部评价指标
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#SSE(和方差)&quot;&gt;SSE(和方差)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#轮廓系数_Silhouette_Coefficient&quot;&gt;轮廓系数 Silhouette Coefficient&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#CalinskiHarabaz_Index&quot;&gt;Calinski-Harabaz Index&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#Compactness(紧密性)(CP)&quot;&gt;Compactness(紧密性)(CP)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#Separation(间隔性)(SP)&quot;&gt;Separation(间隔性)(SP)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#DaviesBouldin_Index(戴维森堡丁指数)(分类适确性指标)(DB)(DBI)&quot;&gt;Davies-Bouldin Index(戴维森堡丁指数)(分类适确性指标)(DB)(DBI)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#Dunn_Validity_Index_(邓恩指数)(DVI)&quot;&gt;Dunn Validity Index (邓恩指数)(DVI)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;外部评价指标
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#纯度（Purity）&quot;&gt;纯度（Purity）&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#标准化互信息（NMI）&quot;&gt;标准化互信息（NMI）&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#调整互信息AMI（_Adjusted_mutual_information）&quot;&gt;调整互信息AMI（ Adjusted mutual information）&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#Rand_index兰德指数&quot;&gt;Rand index兰德指数&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#调整兰德系数_（Adjusted_Rand_index）&quot;&gt;调整兰德系数 （Adjusted Rand index）&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#F值方法&quot;&gt;F值方法&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#FowlkesMallows_scores&quot;&gt;Fowlkes-Mallows scores&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#调和平均Vmeasure&quot;&gt;调和平均V-measure&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#Jaccard_指数&quot;&gt;Jaccard 指数&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.biaodianfu.com/cluster-score.html#Dice_指数&quot;&gt;Dice 指数&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;shared-nearest-neighbor-based-clustering-by-fast-search-and-find-of-density-peaks&quot;&gt;&lt;a href=&quot;[Shared-nearest-neighbor-based clustering by fast search and find of density peaks (liurui.info)](https://resume.liurui.info/asset/Shared-Nearest-Neighbor-Based Clustering by Fast Search and Find of Density Peaks.pdf)&quot;&gt;Shared-nearest-neighbor-based clustering by fast search and find of density peaks&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;指出DPC存在的问题：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-DPC-disadvantages.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;SNNDPC提出：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Innovation.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;作者认为DPC没有考虑邻域的信息，而SNN-DP通过利用KNN来结合领域的信息。并且提出了计算$\rho$和$delta$的新方式，使得稀疏簇的簇中心也能显著地从decision graph上突出出来。&lt;/p&gt;
+
+&lt;h2 id=&quot;定义&quot;&gt;定义&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Definition1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Definition2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Defination3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Definition4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在距离的计算中，SNN-DPC使用了补偿机制，使得在稀疏的簇中，$\delta$的值也可以较高。稀疏簇的簇中心即使密度底，较大的$\delta$也可以使这个簇中心从其他点中pop out。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Definition5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Defination6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在一些极端情况下，会出现一个点同时Inevitable Suborde to多个类别的情况。&lt;/p&gt;
+
+&lt;p&gt;This circumstance may occasionally partially affect the clustering result. To avoid it, we present some simple but useful methods here:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Using odd k argument only&lt;/li&gt;
+  &lt;li&gt;When it occurs, temporarily add 1 to k, making it an odd number&lt;/li&gt;
+  &lt;li&gt;Assigning B to one of them according to the distance from them&lt;/li&gt;
+  &lt;li&gt;Assigning B to one of them according to the distance from their centers.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;尽可能的保证每个点至多inevitable subordinate to一个点。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Defination7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;算法流程&quot;&gt;算法流程&lt;/h2&gt;
+
+&lt;p&gt;The overall process is still divided into three steps: calculation of $ρ$ and $δ$, selection of cluster centers and allocation of non-central points.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-algo1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-algo2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-algo3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;第一次allocation是将那些inevitable subordinate to某些点的样本进行分类，BFS，初始化一个包含所有聚类中心的队列，然后每次pop front，将inevitable subordinate to这个点的所有点归为该点的类别，并加入队列。\textbf{这样保证簇的扩张是从聚类中心开始向外的，避免了在DPC中存在的一个问题：由于簇的某一部分密度更高，这部分如果被错误归类，周围的点将接连被错误归类}。&lt;/p&gt;
+
+&lt;p&gt;第二次allocation是将那些没有inevitable subordinate to任何点的样本进行分类。这些点都possible subordinate to某个或某些点。算法是将遍历所有未分配的点，生成一张allocation matrix，点p的KNN中有点q，且如果q属于第m类，则在矩阵的p-th row和m-th column加1。遍历结束后找到矩阵中值最大的元素，设在矩阵的第i行第j列，则将第i个unallocated point分配给第j类。执行下一次循环重新计算allocation matrix。&lt;/p&gt;
+
+&lt;p&gt;这样对每个点的分配都是谨慎的，都尽可能的考虑了包括邻域在内的最多的信息。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Time Complexity:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Algorithm 2: $O(n^2)$&lt;/p&gt;
+
+&lt;p&gt;Algorithm 3: $O(\max(k,m)n^2)$&lt;/p&gt;
+
+&lt;p&gt;总体时间复杂度: $O(\max(k,m)n^2)$&lt;/p&gt;
+
+&lt;p&gt;空间复杂度: $O(n^2)$&lt;/p&gt;
+
+&lt;h2 id=&quot;case-study&quot;&gt;Case Study&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-Exp1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;上面这个图解释了只依据据距离而出现的问题。DPC可能会将B点归为与A同一类，然后进而将B1，B2也归为和B同一类。如果考虑KNN的信息，计算A和B的SNN，发现它们并不inevitable subordinate to对方，说明二者共同的邻居很少。&lt;/p&gt;
+
+&lt;p&gt;DPC表现不佳的两个数据集：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-DPCinJain.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-DPCinJain_statistics.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可以看出，DPC错误地将点A作为了一个聚类中心，因为点A密度大且距离最近的密度更高的点的距离也大，真正的聚类中心点C二者都比点A小。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/SNNDPC-CominPathbase.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个数据集反应了DPC在allocation中的不足。由于DPC是按照密度和距离最近的点的类别来分配，图中点C的密度比该簇中心（点A）更高，且离B所在的簇很近，DPC会将C以及周围的点都划分为B簇中的点。&lt;/p&gt;
+
+&lt;p&gt;而SNN-DPC的allocation遵循BFS的顺序，严格从聚类中心出发开始拓展，在一定程度上避免了分类错误和连续错误。&lt;/p&gt;</content><author><name>Yan Guochen</name></author><summary type="html">聚类标准</summary></entry><entry><title type="html">GNN的表达能力</title><link href="http://localhost:4000/WL-GIN/" rel="alternate" type="text/html" title="GNN的表达能力" /><published>2022-02-25T00:00:00-08:00</published><updated>2022-02-25T00:00:00-08:00</updated><id>http://localhost:4000/WL-GIN</id><content type="html" xml:base="http://localhost:4000/WL-GIN/">&lt;h2 id=&quot;1-weisfeiler-leman-algorithm&quot;&gt;1. Weisfeiler-Leman Algorithm&lt;/h2&gt;
+
+&lt;p&gt;&amp;lt;Weisfeiler-Lehman Graph Kernels&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;为衡量GNN的表达能力，我们通常会选用Weisfeiler-Leman算法进行比较，WL算法产被用于做图同构测试（Graph Isomorphism Test）&lt;/p&gt;
+
+&lt;h3 id=&quot;11-算法思路&quot;&gt;1.1 算法思路&lt;/h3&gt;
+
+&lt;p&gt;节点的信息包括结构信息和自身特征信息，WL算法用hash来编码和判断两个节点是否一致：&lt;/p&gt;
+
+\[h_l^(t)(u) = HASH(h_l^{t-1}(u), \mathcal F(h_l^{t-1}(v))|v \in N(u)))\]
+
+&lt;p&gt;$\mathcal F$是邻居节点的聚合函数，和GraphSAGE很类似，但这里采用了更“无损”的HASH编码。&lt;/p&gt;
+
+&lt;p&gt;算法流程是：1. 聚合、编码节点信息， 2. 将节点信息映射到一个实数（向量、符号等，其他也行），重新将这个实数赋给节点。反复迭代，用Jaccard相似度计算两个图节点信息集合的相似性。&lt;/p&gt;
+
+&lt;h2 id=&quot;2-how-powerful-are-graph-neural-networks&quot;&gt;2. &lt;a href=&quot;http://arxiv.org/abs/1810.00826&quot;&gt;&lt;strong&gt;How powerful are graph neural networks&lt;/strong&gt;&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://archwalker.github.io/blog/2019/06/22/GNN-Theory-Power.html&quot;&gt;GNN 教程：GNN 模型有多强？ - ArchWalker&lt;/a&gt;&lt;/p&gt;</content><author><name>Yan Guochen</name></author><summary type="html">1. Weisfeiler-Leman Algorithm</summary></entry><entry><title type="html">聚类基本知识</title><link href="http://localhost:4000/Cluster-basic/" rel="alternate" type="text/html" title="聚类基本知识" /><published>2022-02-23T20:00:00-08:00</published><updated>2022-02-23T20:00:00-08:00</updated><id>http://localhost:4000/Cluster-basic</id><content type="html" xml:base="http://localhost:4000/Cluster-basic/">&lt;h1 id=&quot;1-数据规范化&quot;&gt;1. 数据规范化&lt;/h1&gt;
+
+&lt;h3 id=&quot;11-数据规范化的作用&quot;&gt;1.1 数据规范化的作用&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;不同特征具有不同的量纲，为消除量纲带来的影响，将不同分量的数据都约束在同一范围内，使得指标之间具有可比性或具有相同的权重。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;消除离群点、奇异点数据对结果造成的不良影响。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在涉及梯度计算和反向传播的时候，可以加快训练，让损失函数的梯度等高线变得类球形，避免梯度下降轨迹弯弯曲曲（找一个两个自变量的损失函数推一推式子就能得到）。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;有可能提高精度（KNN）和收敛性。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;12-数据规范化的方法&quot;&gt;1.2 数据规范化的方法&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;max/min Normalization: 通过线性变化将数据映射到给定的区间范围内，如：&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\hat v_i = \hat v_{min} + \frac{v_i - v_{min}}{v_{max} - v_{min}} (\hat v_{max} - \hat v_{min})\]
+
+&lt;p&gt;缺点是对离群点敏感，如果有显著的离群点，规范化的效果将会变差。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;z-score Normalization&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\hat v_i = \frac{v_i - \mu}{\sigma}\]
+
+&lt;p&gt;其中$\mu = \frac{1}{n}v_i, \sigma = \sqrt{\frac{1}{n}\sum_{i = 1}^{n}(v_i - \mu)^2}$&lt;/p&gt;
+
+&lt;p&gt;将数据分布变化成期望为0，标准差（方差）为1的分布。对离群点不敏感。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;非线性归一化。如利用对数函数，指数函数，sigmoid函数，反正切函数。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;13-应用&quot;&gt;1.3 应用&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;概率模型不需要归一化，因为这种模型不关心变量的取值，而是关心变量的分布和变量之间的条件概率；&lt;/li&gt;
+  &lt;li&gt;SVM、线性回归之类的最优化问题需要归一化，是否归一化主要在于是否关心变量取值；&lt;/li&gt;
+  &lt;li&gt;神经网络需要标准化处理，一般变量的取值在-1到1之间，这样做是为了弱化某些变量的值较大而对模型产生影响。一般神经网络中的隐藏层采用tanh激活函数比sigmod激活函数要好些，因为tanh双曲正切函数的取值[-1,1]之间，均值为0.&lt;/li&gt;
+  &lt;li&gt;在K近邻算法中，如果不对解释变量进行标准化，那么具有小数量级的解释变量的影响就会微乎其微。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;2-常见聚类算法&quot;&gt;2. 常见聚类算法&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-直接聚类法&quot;&gt;2.1 直接聚类法&lt;/h3&gt;
+
+&lt;p&gt;是一种基于分层的聚类方法。先将每个点看作一类，每次找距离最近的两类，将他们合并为一类。N个类经过N-1次合并最终变为一类。根据归并的顺序，还可做出谱系图。可以指定距离阈值或聚类个数。&lt;/p&gt;
+
+&lt;h3 id=&quot;22-k-means&quot;&gt;2.2 K-Means&lt;/h3&gt;
+
+&lt;p&gt;是基于划分的无监督学习算法，是一种迭代的算法。基本思想是将点分配给距离最近的聚类中心，然后根据同一类中的点计算中心，作为新的聚类中心点。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/Cluster%20basic-1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;理论分析&quot;&gt;理论分析&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;K-means基于的一个基本假设是，对于每一个类，可以找到一个中心点，使得这个类中点到这个类的中心点的距离比到其他类的中心点的距离近。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;基于这个假设，K-means的损失函数被定义为：&lt;/p&gt;
+
+\[\sum_{i = 1}^N \min_{u_j \in C}||x_i - \mu_j||^2 \\
+or \\
+\begin{aligned}
+L &amp;amp;= L(X_1, \cdots, X_K, x_i, \cdots, x_N) \\
+  &amp;amp;= \sum_{k=1}^K\sum_{x_i \in X_k} ||x_i - y_k||^2 \\
+\end{aligned}\]
+
+&lt;p&gt;算法分两步：确定${y_k}^K$，分配${x_i}^N$；确定${x_i}^N$，分配${y_k}^K$。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;确定${y_k}^K$，分配${x_i}^N$。显然，将$x_i$分配给距离最近的$y_k$即可使损失函数$L$最小。&lt;/li&gt;
+  &lt;li&gt;确定${x_i}^N$，分配${y_k}^K$。利用多元函数微分的知识：&lt;/li&gt;
+&lt;/ol&gt;
+
+\[\frac{\partial L(X_1, \cdots, X_K, x_i, \cdots, x_N)}{\partial y_k} = \sum_{x_i \in X_k}-2||x_i - y_k||\]
+
+&lt;p&gt;令$\frac{\partial L}{\partial y_k} = 0$，则有：&lt;/p&gt;
+
+\[y_k = \frac{1}{|X_k|}\sum_{x_i \in X_k} x_i\]
+
+&lt;p&gt;即，$y_k = center(X_k)$.&lt;/p&gt;
+
+&lt;p&gt;每一次迭代，损失函数都只减不增，最后收敛到一个局部最优点。&lt;/p&gt;
+
+&lt;p&gt;K-means is equivalent to the expectation-maximization algorithm with a small, all-equal, diagonal covariance matrix.&lt;/p&gt;
+
+&lt;p&gt;Time complexity: $O(NKT)$, 其中N是样本数，K是聚类数，T是迭代轮数。&lt;/p&gt;
+
+&lt;h4 id=&quot;影响结果的因素&quot;&gt;影响结果的因素&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;K的选取。K-means必须知道K的准确数值才能获得良好的表现。&lt;/li&gt;
+  &lt;li&gt;初始中心点的选取。可以使用L-means++策略选取。&lt;/li&gt;
+  &lt;li&gt;聚类的形状，需要满足基本假设&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;优缺点&quot;&gt;优缺点&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;当点是密集且类之前区分明显的情况，表现好；对于大型数据集，该算法可拓展性高，高效。&lt;/li&gt;
+  &lt;li&gt;容易陷入局部最小点。&lt;/li&gt;
+  &lt;li&gt;对离群点敏感，个别离群点在求聚类中心的时候会使得中心点的位置偏离。&lt;/li&gt;
+  &lt;li&gt;只能发现球状的cluster。&lt;/li&gt;
+  &lt;li&gt;inertia不是一个Normalized的指标，在高维空间中欧氏距离会变得很大（维数诅咒）。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;23-dbscan&quot;&gt;2.3 DBSCAN&lt;/h3&gt;
+
+&lt;p&gt;是一种基于密度的聚类算法，核心思想是计算每个点的邻域内的邻居点数来衡量密度，可以找出不规则形状的聚类，且不需要事先知道聚类数。&lt;/p&gt;
+
+&lt;h4 id=&quot;基本概念&quot;&gt;基本概念&lt;/h4&gt;
+
+&lt;p&gt;参数有两个：1. eps($\epsilon$)，指邻域半径；2. MinPts(Minimal number of points required to form clusters, $\mathcal M$)。&lt;/p&gt;
+
+&lt;p&gt;考虑数据集$\mathbf X = {x_i}_{i=1}^N$，有如下定义：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;点x的$\epsilon$ 邻域&lt;/li&gt;
+&lt;/ul&gt;
+
+\[N_{\epsilon}(x) = \{x_i|d(x,x_i) \leq \epsilon \}\]
+
+&lt;p&gt;也可以记为：&lt;/p&gt;
+
+\[N_{\epsilon}(i) = \{i|d(x,x_i) \leq \epsilon\}\]
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;密度: $\rho(x) = {| N_{\epsilon}(x)|}$ .&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Core point, 点x是core point，当且仅当$\rho(x) \geq \mathcal M$，将所有core points记为$X_c$，并记非核心点为$X_{nc} = X - X_c$.&lt;/li&gt;
+  &lt;li&gt;Border point, 点x是border point（$x \in X_{bd}$），当且仅当$x \in X_{nc}$且$N_{\epsilon}(x) \cap X_c \neq \emptyset$，即非核心点x的邻域包含核心点，或非核心点x落在某个核心点的邻域。&lt;/li&gt;
+  &lt;li&gt;Noise point，点x是noise point，当且仅当$x \in X - (X_c \cup X_{bd})$. 此时$X = X_c \cup X_{bd} \cup X_{noi}$.&lt;/li&gt;
+  &lt;li&gt;Directly density-reachable:     设$x,y\in X$，若$y\in N_{\epsilon}(x)$且$x \in X_c$，则称y是从x直接密度可达的。&lt;/li&gt;
+  &lt;li&gt;Density-reachable: 设$p_1, \cdots, p_m \in X, m \geq 2$，若满足$p_{i+1}$是由$p_i$&lt;strong&gt;直接密度可达的&lt;/strong&gt;，则称点$p_m$是从点$p_1$密度可达。密度可达是直接密度可达的传递闭包。密度可达关系不具有对称性。&lt;/li&gt;
+  &lt;li&gt;Density-connected: 设$x, y, z \in X$，若y,z均是从x密度可达的，则y，z密度相连。密度相连关系具有对称性。&lt;/li&gt;
+  &lt;li&gt;Cluster: 若C是一个cluster，C满足：1.是X的非空子集，2. 若$x \in C$，y从x密度可达（Maximization），则$y \in C$，3. 若$x, y \in C$，则x和y密度相连（Connectivity）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;算法流程&quot;&gt;算法流程&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/Cluster%20basic-2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;该算法中，边界点的归属会受点的遍历顺序的影响。如果边界点的归属很重要，可以先将边界点标记出来，在最后分配给最近的类。&lt;/p&gt;
+
+&lt;h4 id=&quot;问题&quot;&gt;问题&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$\epsilon$的选取。是一个固定的、统一的值，在过密的点中容易将多个聚类当作一类，在过疏的点中容易将一类分散成多类。对数据点的适应度不够。&lt;/li&gt;
+  &lt;li&gt;参数$\mathcal M$的选择。$\mathcal M$有一个指导性原则，即$\mathcal M \geq dim+1$.&lt;/li&gt;
+  &lt;li&gt;复杂度问题。时空复杂度为$O(N^2)$，可用kd tree等索引结构降为$O(NlogN)$ .&lt;/li&gt;
+  &lt;li&gt;距离公式的选取。如果选用欧几里得距离，在维数增大的时候，由于curse of dimensionality，很难选到一个合适的$\epsilon$值。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;24-optics&quot;&gt;2.4 OPTICS&lt;/h3&gt;
+
+&lt;p&gt;可以看作对DBSCAN的一种改进，使得DBSCAN对参数不那么敏感。 OPTICS不直接给出聚类结果，而是给出一个有序数组，包含了可以用来做聚类的信息。其中信息也可以用来做关联分析等。&lt;/p&gt;
+
+&lt;h4 id=&quot;基本概念-1&quot;&gt;基本概念&lt;/h4&gt;
+
+&lt;p&gt;大部分概念和DBSCAN一致。另给出两个概念：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Core distance，核心距离。设$x \in X$，使得x称为核心点的最小邻域半径为x的核心距离。&lt;/li&gt;
+&lt;/ul&gt;
+
+\[cd(x) = \left\{    \begin{array}{rcl}    Undefined     &amp;amp;  |N_{\epsilon}(x) &amp;lt; \mathcal M| \\    d(x, N_{\epsilon}^{\mathcal M}(x)     &amp;amp; |N_{\epsilon}(x) \geq \mathcal M|    \end{array}\right.\]
+
+&lt;p&gt;其中$N_{\epsilon}^{i}(x)$指点x邻域中x距离第i近的点的距离。如果x本身是核心点，则$cd(x) \leq \epsilon$.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reachable distance，可达距离。设$x, y \in X$，对于给定的参数$\epsilon$和$\mathcal M$，y关于x的可达距离为：&lt;/li&gt;
+&lt;/ul&gt;
+
+\[rd(y,x) = \left\{    \begin{array}{rcl}    Undefined     &amp;amp;  |N_{\epsilon}(x) &amp;lt; \mathcal M| \\    \max\{d(x, y), cd(x)\}     &amp;amp; |N_{\epsilon}(x) \geq \mathcal M|    \end{array}\right.\]
+
+&lt;p&gt;特别的，当x是核心点时，y关于x的可达距离可以理解为：使得x是核心点且y是从x直接密度可达的点的最小邻域半径。        注： $rd(y,x)$的值与y所在空间的密度有关，密度越大，它从相邻节点直接密度可达的距离就越小．如果聚类时想要朝着数据尽量稠密的空间进行扩张，那么可达距离最小的点是最佳的选择．为此，OPTICS算法中用一个可达距离升序排列的有序种子队列存储待扩张的点，以迅速定位稠密空间的数据对象.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/Cluster%20basic-3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/Cluster%20basic-4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/Clsuter%20basic-5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;上面的算法处理完后，我们得到了输出结果序列，每个节点的可达距离和核心距离。我们以可达距离为纵轴，样本点输出次序为横轴进行可视化：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/Cluster%20basic-6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;x轴为输出序列p的点的编号，y轴是可达距离。&lt;/p&gt;
+
+&lt;p&gt;簇在坐标轴中表述为山谷，并且山谷越深，簇越紧密。&lt;/p&gt;
+
+&lt;p&gt;黄色代表的是噪声，它们不形成任何凹陷。&lt;/p&gt;
+
+&lt;p&gt;OPTICS的核心思想：1) 较稠密簇中的对象在簇排序中相互靠近，2)一个对象的最小可达距离给出了一个对象连接到一个稠密簇的最短路径。 相对于DBSCAN，该算法对于距离阈值$\epsilon$的敏感性大大降低，这是因为：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在OPTICS算法中从输出得到的并不是直接的聚类结果，而是在$\epsilon$和$\mathcal M$下的有序队列，以及所有样本点的核心距离和可达距离。&lt;/li&gt;
+  &lt;li&gt;在处理结果队列时，通过判断样本点的核心距离是否小于等于$\epsilon$实际上就是在判断该样本点是否是新半径$\epsilon^{‘}$的核心点，其中$\epsilon^{‘} &amp;lt; \epsilon$。而两者都不满足的样本点一定会被认为是噪声，所以对于距离阈值，该算法有一定的不敏感性。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;OPTICS相当于将$\epsilon$改为动态的DBSCAN算法，可以进行多密度的聚类（因为ϵ$\epsilon$对于结果的影响较低，且输出中包含了关于可达距离的信息，可以辅助设置$\epsilon$) 综上，OPTICS可以在minPts固定的前提下，对于任意的$\epsilon^{‘}$(其中$\epsilon^{‘} \leq \epsilon$)都可以直接经过简单的计算得到新的聚类结果。 直观从结果图来看，以某一个可达距离$\epsilon$画平行于x轴的直线，当直线穿过几个山谷区域，最终就会得到几种簇（因为每一个山谷代表一种簇，或说一团高密度区域）。在此基础上，我们可以选择合适的可达距离$\epsilon$做为其它距离算法（例如DBSCAN）的初始参数设定从而进行聚类。从这个角度来看，OPTICS聚类算法也可以被认为是一种筛选最优距离阈值$\epsilon$的方法。&lt;/p&gt;</content><author><name>Yan Guochen</name></author><summary type="html">1. 数据规范化</summary></entry><entry><title type="html">Mutual Information and Maximum Information Coeffient</title><link href="http://localhost:4000/MI-MIC/" rel="alternate" type="text/html" title="Mutual Information and Maximum Information Coeffient" /><published>2022-02-09T01:00:00-08:00</published><updated>2022-02-09T01:00:00-08:00</updated><id>http://localhost:4000/MI-MIC</id><content type="html" xml:base="http://localhost:4000/MI-MIC/">&lt;h1 id=&quot;特征选择-互信息与最大信息系数&quot;&gt;特征选择-互信息与最大信息系数&lt;/h1&gt;
+
+&lt;h2 id=&quot;pre-requisite&quot;&gt;Pre-requisite&lt;/h2&gt;
+
+&lt;p&gt;香农首先定义了事件的信息量为$\log{\frac1p}$&lt;/p&gt;
+
+&lt;p&gt;信息论中定义了&lt;strong&gt;熵&lt;/strong&gt;用来描述事件的不确定性，也是所发生的事件的信息量的期望：&lt;/p&gt;
+
+\[\begin{align}
+H(X) &amp;amp;= \sum_{k=1}^NP(X = k)\log_2{\frac{1}{P(X=k)}} \\ &amp;amp;= -\sum_{k=1}^NP(X = k)\log_2{P(X=k)} \\
+&amp;amp;= -E[\log P(X)] \\
+\end{align}\]
+
+&lt;p&gt;均匀分布的熵最大。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;条件熵&lt;/strong&gt;：&lt;/p&gt;
+
+\[\begin{align}
+H(Y|X) &amp;amp;= \sum_{x \in X}P(x)H(Y|X=x)\\
+&amp;amp;= \sum_{x \in X}P(x)\sum_{y \in Y}p(y|x)\log\frac1{P(y|x)} \\
+&amp;amp;= \sum_{x\in X}\sum_{y \in Y}P(x)P(y|x)\log{\frac1{P(y|x)}} \\
+&amp;amp;= \sum_{x\in X}\sum_{y \in Y}P(x,y)\log{\frac1{P(y|x)}} \\
+&amp;amp;= -E[\log P(Y|X)]
+\end{align}\]
+
+&lt;p&gt;&lt;strong&gt;联合熵&lt;/strong&gt;：&lt;/p&gt;
+
+\[H(X, Y) = \sum_{x\in X}\sum_{y \in Y}P(x,y)\log{\frac1{P(x, y)}} = -E[\log P(X,Y)]\]
+
+&lt;p&gt;&lt;strong&gt;交叉熵&lt;/strong&gt;：&lt;/p&gt;
+
+\[H_{CE}(X,Y) = -\sum_{k=1}^N P(X=k)\log_2{P(Y=k)}\]
+
+&lt;p&gt;用于衡量两个随机变量的概率分布的一致性。如果两个变量同分布，则$H_{CE}(X, Y) = H(X) = H(Y)$。&lt;/p&gt;
+
+&lt;p&gt;两个随机变量概率分布的差异可由&lt;strong&gt;KL散度&lt;/strong&gt;量化，KL散度又称为&lt;strong&gt;相对熵&lt;/strong&gt;：&lt;/p&gt;
+
+\[KL(X,Y) =D_{KL}(p||q) = \sum_ip(x_i)(\log_2\frac{1}{q(x_i)}-\log_2\frac1{p(x_i)}) = H_{CE}(X,Y)-H(X)\]
+
+&lt;p&gt;当两个分布相同时，KL散度最小，为0。注意相对熵（KL散度）是一个非对称的度量。&lt;/p&gt;
+
+&lt;p&gt;这是一篇讲解KL散度的博客：&lt;a href=&quot;https://www.jianshu.com/p/43318a3dc715&quot;&gt;如何理解K-L散度（相对熵） - 简书 (jianshu.com)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;为解决相对熵不对称的问题，提出了&lt;strong&gt;JS散度&lt;/strong&gt;：&lt;/p&gt;
+
+\[D_{JS}(p(x), q(x)) = 0.5*[D_{KL}(p||\frac{p+q}{2}) + D_{KL}(q||\frac{p+q}{2})]\]
+
+&lt;p&gt;&lt;strong&gt;信息增益（Information Gain）&lt;/strong&gt;：用来描述一个变量对另一个变量的影响，变量A对D的信息增益为：&lt;/p&gt;
+
+\[g(D, A) = H(D) - H(D|A)\]
+
+&lt;p&gt;经典的&lt;strong&gt;互信息&lt;/strong&gt;也是评价定性自变量对定性因变量的相关性的，互信息计算公式如下：&lt;/p&gt;
+
+\[I(X,Y) = \sum_{x\in X, y \in Y}p(x,y)\log_2{\frac{p(x,y)}{p(x)p(y)}} \\
+I(X,Y) = I(Y, X)\]
+
+&lt;p&gt;互信息可以理解为X和Y联合分布和X、Y边缘分布之积的KL散度。&lt;/p&gt;
+
+&lt;p&gt;X为待选择的特征，Y为标签或预测值。二者互信息越大，说明相关性越强。&lt;/p&gt;
+
+&lt;p&gt;对于连续变量的计算不是很方便（X和Y都是集合，x，y都是离散的取值），通常变量需要先离散化，而互信息的结果对离散化的方式很敏感。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;最大信息系数（MIC）&lt;/strong&gt;克服了这个问题。它首先寻找一种最优的离散化方式，然后把互信息取值转换成一种度量方式，取值区间在[0，1]。&lt;/p&gt;
+
+&lt;p&gt;MIC首先将连续的取值离散化，采用的是分箱法。&lt;/p&gt;
+
+&lt;p&gt;对于连续的随机变量，互信息为：&lt;/p&gt;
+
+\[I(X, Y) = \int p(x, y)\log_2{\frac{p(x,y)}{p(x)p(y)}}dxdy\]
+
+&lt;p&gt;用类似蒙特卡洛的思想，将X-Y画出散点图，在图上划分网格，用离散的散点近似联合分布。当数据量足够大时，这种近似的效果越好。&lt;/p&gt;
+
+&lt;p&gt;最后要进行归一化，以消除近似中网格密度得影响，即最大化：&lt;/p&gt;
+
+\[MIC(X, Y) = \max_{a*b \leq B} \frac{I(X, Y)}{log2\min{(a, b)}}\]
+
+&lt;p&gt;经验上地，B为数据量的0.6次方。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/qq_27586341/article/details/90603140&quot;&gt;MIC：最大信息系数_满腹的小不甘-CSDN博客_最大信息系数&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;question&quot;&gt;Question&lt;/h3&gt;
+
+&lt;p&gt;为什么要取max？分格近似一定会比真实值小吗&lt;/p&gt;</content><author><name>Yan Guochen</name></author><summary type="html">特征选择-互信息与最大信息系数</summary></entry><entry><title type="html">Local Outlier Factor</title><link href="http://localhost:4000/LOF/" rel="alternate" type="text/html" title="Local Outlier Factor" /><published>2022-02-08T20:00:00-08:00</published><updated>2022-02-08T20:00:00-08:00</updated><id>http://localhost:4000/LOF</id><content type="html" xml:base="http://localhost:4000/LOF/">&lt;h1 id=&quot;异常检测loflocal-outlier-factor&quot;&gt;异常检测：LOF（Local Outlier Factor）&lt;/h1&gt;
+
+&lt;p&gt;Local Outlier Factor（LOF）是基于密度的经典算法（Breuning et,al 2000）。之前的异常检测算法大都是基于统计，或借助聚类算法。但是基于统计的算法需要假设数据服从某种分布，聚类算法往往只能给出点是否是异常点，不能量化异常程度。而LOF则不对数据分布做太多要求，同时能给出每个点的异常程度。&lt;/p&gt;
+
+&lt;h2 id=&quot;算法步骤&quot;&gt;算法步骤&lt;/h2&gt;
+
+&lt;h3 id=&quot;相关定义&quot;&gt;相关定义&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;K-distance&lt;/strong&gt;, $d_k(x)$: 距离点x第k近的点与点x的距离.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;K-distance neighborhood&lt;/strong&gt;, $N_k(x)$: 点x的k近邻，其中：&lt;/p&gt;
+
+\[|N_k(x)| \geq k\]
+
+&lt;p&gt;&lt;strong&gt;reach-distance&lt;/strong&gt;:&lt;/p&gt;
+
+\[reach-dis_k(P, O) = \max\{d_k(O), d(P,O)\}\]
+
+&lt;p&gt;k值越高，同一邻域内的点的可达距离将会越相似&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;local reachability density&lt;/strong&gt;:&lt;/p&gt;
+
+\[lrd(P) = \frac{1}{\frac{\sum_{O \in N_k(P)}reach-dis_k(P,O)}{|N_k(P)|}}\]
+
+&lt;p&gt;点P的局部可达密度是P与P的k近邻内点的平均reach-distance的倒数。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;local outlier factor&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;根据局部可达密度的定义，如果一个数据点跟其他点比较疏远的话，那么显然它的局部可达密度就小。&lt;strong&gt;但LOF算法衡量一个数据点的异常程度，并不是看它的绝对局部密度，而是看它跟周围邻近的数据点的相对密度。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这样做的好处是可以允许数据分布不均匀、密度不同的情况。局部异常因子即是用局部相对密度来定义的。&lt;/p&gt;
+
+\[LOF_k(P) = \frac{\frac{\sum_{O \in N_k(P)}lrd(O)}{|N_k(P)|}}{lrd(P)}\]
+
+&lt;h3 id=&quot;算法&quot;&gt;算法&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;对于每个数据点，计算它与其它所有点的距离，并按从近到远排序；&lt;/li&gt;
+  &lt;li&gt;对于每个数据点，找到它的 k-nearest-neighbor，计算 LOF 得分;&lt;/li&gt;
+  &lt;li&gt;如果LOF值越大，说明越异常，反之如果越小，说明越趋于正常。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;优缺点&quot;&gt;优缺点&lt;/h2&gt;
+
+&lt;h3 id=&quot;优点&quot;&gt;优点&lt;/h3&gt;
+
+&lt;p&gt;LOF 的一个优点是它同时考虑了数据集的局部和全局属性。异常值不是按绝对值确定的，而是相对于它们的邻域点密度确定的。当数据集中存在不同密度的不同集群时，LOF表现仍然良好，比较适用于中等高维的数据集。&lt;/p&gt;
+
+&lt;h3 id=&quot;缺点&quot;&gt;缺点&lt;/h3&gt;
+
+&lt;p&gt;LOF算法中关于局部可达密度的定义其实暗含了一个假设，即：&lt;strong&gt;不存在大于等于 k 个重复的点。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;当这样的重复点存在的时候，这些点的平均可达距离为零，局部可达密度就变为无穷大，会给计算带来一些麻烦。在实际应用时，为了避免这样的情况出现，可以把 k-distance 改为 k-distinct-distance，不考虑重复的情况。或者，还可以考虑给可达距离都加一个很小的值，避免可达距离等于零。&lt;/p&gt;
+
+&lt;p&gt;另外，LOF 算法需要计算数据点两两之间的距离，造成整个算法时间复杂度为$O(N^2)$ 。为了提高算法效率，后续有算法尝试改进。FastLOF （Goldstein，2012)先将整个数据随机的分成多个子集，然后在每个子集里计算 LOF 值。对于那些 LOF 异常得分小于等于 1 的，从数据集里剔除，剩下的在下一轮寻找更合适的 nearest-neighbor，并更新 LOF 值。&lt;/p&gt;
+
+&lt;h2 id=&quot;应用&quot;&gt;应用&lt;/h2&gt;
+
+&lt;p&gt;可用于异常检测，数据清洗。&lt;/p&gt;
+
+&lt;p&gt;异常检测（anomaly detection）又分为异常值检测和新颖值（奇异值）检测：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;异常值检测（Outlier detection）：训练数据中含有异常值，通过相关算法找到训练数据的中心模式，忽略偏差观测值，从而检测出异常值。&lt;/li&gt;
+  &lt;li&gt;奇异值检测（Novelty detection）：训练数据不包含异常值，只含有positive（正常）的数据，通过算法学习其pattern。之后用于检测未曾看到过新数据是否属于这个pattern，如果属于，该新数据是positive，否则negative，即奇异值。&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Yan Guochen</name></author><summary type="html">异常检测：LOF（Local Outlier Factor）</summary></entry><entry><title type="html">Feature Engineering</title><link href="http://localhost:4000/feature-engineer/" rel="alternate" type="text/html" title="Feature Engineering" /><published>2022-02-07T01:00:00-08:00</published><updated>2022-02-07T01:00:00-08:00</updated><id>http://localhost:4000/feature-engineer</id><content type="html" xml:base="http://localhost:4000/feature-engineer/">&lt;p&gt;数据和特征的质量决定了机器学习的上限。&lt;/p&gt;
+
+&lt;p&gt;特征工程包括：&lt;/p&gt;
+
+&lt;h2 id=&quot;特征处理基于sklearn&quot;&gt;特征处理（基于sklearn）&lt;/h2&gt;
+
+&lt;p&gt;特征处理包括1. 特征清洗，2. 数据预处理。&lt;/p&gt;
+
+&lt;h3 id=&quot;特征清洗&quot;&gt;特征清洗&lt;/h3&gt;
+
+&lt;p&gt;主要任务是对异常样本的处理。对”异常“的定义并不统一，简单起见，离群点是会被认为为异常点的。在统计上离群点往往和低概率相关联，以下方法都是以概率思想识别离群点：&lt;/p&gt;
+
+&lt;h4 id=&quot;基于统计量的方法&quot;&gt;基于统计量的方法&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;箱型图分析&lt;/strong&gt;：根据其四分位数，计算极差以及分位差（思想：找出离密度高的群体较远的点）&lt;/p&gt;
+
+&lt;p&gt;一般认为：如果数据量足够大，1/4和3/4分位差之外的数据可以认为是异常点。如果数据量不够大，则认为$(D_{\frac{1}{4}}-1.5\times(D_{\frac34}-D_{\frac14}), D_{\frac{3}{4}}+1.5\times(D_{\frac34}-D_{\frac14})$的之外的数据为异常数据。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;正态图分析&lt;/strong&gt;：$3\sigma$原则&lt;/p&gt;
+
+&lt;p&gt;基于统计的方法的缺点是：1. 非常依赖于数据集的数据分布，数据集中的数据是否满足某种分布对效果影响很大，2. 离群点的意义有多种。&lt;/p&gt;
+
+&lt;p&gt;一般来说可以在初期尝试使用这些方法，观察模型效果是否提升。&lt;/p&gt;
+
+&lt;h4 id=&quot;knn&quot;&gt;KNN&lt;/h4&gt;
+
+&lt;p&gt;它是基于相似度衡量的模型的一种，异常点和正常点的分布不同，因此二者的相似度低。&lt;/p&gt;
+
+&lt;p&gt;主要思想是：对于每个点计算它的k近邻距离，一般认为异常点的第k邻距离更大。所以在计算时，就是先计算出每个点的k近邻距离，然后进行排序，选择距离最大的几个为异常点。&lt;/p&gt;
+
+&lt;p&gt;它受数据维度的影响比较大，当维度比较低的时候表现很好。事实上基于距离的方法在高维时表现都不佳。&lt;/p&gt;
+
+&lt;h4 id=&quot;聚类&quot;&gt;聚类&lt;/h4&gt;
+
+&lt;p&gt;思想：找出分布稀疏且离密度高的群体较远的点。&lt;/p&gt;
+
+&lt;p&gt;它只能给出是不是异常点，不能量化每个数据点的异常程度。&lt;/p&gt;
+
+&lt;h4 id=&quot;local-outlier-factor&quot;&gt;Local Outlier Factor&lt;/h4&gt;
+
+&lt;p&gt;基于密度的LOF算法要更简单、直观。它不需要对数据的分布做太多要求，还能量化每个数据点的异常程度（outlierness）。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youth-49.github.io/2022/02/LOF/&quot;&gt;Local Outlier Factor (youth-49.github.io)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;one-class-svm&quot;&gt;One-class SVM&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/wj-1314/p/10701708.html&quot;&gt;Python机器学习笔记：异常点检测算法——One Class SVM - 战争热诚 - 博客园 (cnblogs.com)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;iforest&quot;&gt;IForest&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cloud.tencent.com/developer/article/1631110&quot;&gt;【异常检测】孤立森林（Isolation Forest）算法简介 - 云+社区 - 腾讯云 (tencent.com)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;数据预处理基于sklearnpreprocess&quot;&gt;数据预处理（基于sklearn.preprocess）&lt;/h3&gt;
+
+&lt;p&gt;对于未经处理的特征，可能存在以下问题：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;量纲不统一&lt;/li&gt;
+  &lt;li&gt;在任务上该特征存在信息冗余&lt;/li&gt;
+  &lt;li&gt;需要将定性特征转化为定量特征&lt;/li&gt;
+  &lt;li&gt;Missing value&lt;/li&gt;
+  &lt;li&gt;信息利用率低&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;与之对应地，有如下解决方法：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;无量纲化&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;无量纲化包括对数据标准化，区间缩放，归一化。&lt;/p&gt;
+
+&lt;p&gt;标准化：使该特征符合均值为0，方差为1的分布：&lt;/p&gt;
+
+\[x' = \frac{x-\overline x}{\sigma}\]
+
+&lt;p&gt;区间缩放：使得数据等比例地缩放到一个给定区间：&lt;/p&gt;
+
+\[x' = \frac{s-Min}{Max-Min}\]
+
+&lt;p&gt;也修改了原数据分布的均值和方差，可以将标准化看作特殊的区间缩放。&lt;/p&gt;
+
+&lt;p&gt;归一化：归一化并不属于无量纲化的一种，归一化将每个样本的特征向量的模长变为1。&lt;/p&gt;
+
+&lt;p&gt;$L_p$归一化公式为：&lt;/p&gt;
+
+\[x' = \frac{x}{(\sum_{i}^{n}x_i^p)^{\frac{1}{p}}}\]
+
+&lt;p&gt;常采用$L_2$归一化。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;二值化（离散化）&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;对某些特定任务，二值数据或离散化数据即可满足要求。连续实数值可能会造成信息冗余。一般的做法是设置阈值。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;对定性特征进行one-hot编码或哑编码（Dummy coding）&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;为一种定性特征的每个取值设定一个定量值往往需要大量的专家知识和调参工作，通常的做法是采用one-hot coding或dummy coding的方式——假设有N种定性值，则：&lt;/p&gt;
+
+&lt;p&gt;one-hot coding：将这一个特征扩展为N种特征，当原始特征值为第i种定性值时，第i个扩展特征赋值为1，其他扩展特征赋值为0。&lt;/p&gt;
+
+&lt;p&gt;dummy coding：将这一个特征扩展为N-1种特征，将其中一种定性值编码为全0.&lt;/p&gt;
+
+&lt;p&gt;对于线性模型来说，使用one-hot编码或哑编码后的特征可达到非线性的效果。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Missing value&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;对缺失值的处理包括丢弃和填充。填充缺失值往往用该特征取值的均值。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;数据变化&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;常见的数据变换有基于多项式的、基于指数函数的、基于对数函数的。&lt;/p&gt;
+
+&lt;p&gt;以上操作均可借助sklearn.preprocess库实现：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;类&lt;/th&gt;
+      &lt;th&gt;功能&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;StandardScaler&lt;/td&gt;
+      &lt;td&gt;无量纲化&lt;/td&gt;
+      &lt;td&gt;标准化，基于特征矩阵的列，将特征值转换至服从标准正态分布&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MinMaxScaler&lt;/td&gt;
+      &lt;td&gt;无量纲化&lt;/td&gt;
+      &lt;td&gt;区间缩放，基于最大最小值，将特征值转换到[0, 1]区间上&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Normalizer&lt;/td&gt;
+      &lt;td&gt;归一化&lt;/td&gt;
+      &lt;td&gt;基于特征矩阵的行，将样本向量转换为“单位向量”&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Binarizer&lt;/td&gt;
+      &lt;td&gt;二值化&lt;/td&gt;
+      &lt;td&gt;基于给定阈值，将定量特征按阈值划分&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;OneHotEncoder&lt;/td&gt;
+      &lt;td&gt;哑编码&lt;/td&gt;
+      &lt;td&gt;将定性数据编码为定量数据&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Imputer&lt;/td&gt;
+      &lt;td&gt;缺失值计算&lt;/td&gt;
+      &lt;td&gt;计算缺失值，缺失值可填充为均值等&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;PolynomialFeatures&lt;/td&gt;
+      &lt;td&gt;多项式数据转换&lt;/td&gt;
+      &lt;td&gt;多项式数据转换&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;FunctionTransformer&lt;/td&gt;
+      &lt;td&gt;自定义单元数据转换&lt;/td&gt;
+      &lt;td&gt;使用单变元的函数来转换数据&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;对于文本特征，将自然语言预处理成向量，一般有如下方法：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;词袋模型：建立词库，样本文本中该词出现即对应分量为1。缺点是词与词之间相互独立，向量维数过高，向量过稀疏，对于未见词处理不佳。&lt;/li&gt;
+  &lt;li&gt;n-gram改进的词袋模型：建立词库时，将n-gram也作为一个词加入词库，这样考虑了n个词的依赖关系，同时增大了词库大小。&lt;/li&gt;
+  &lt;li&gt;词袋+TF-IDF&lt;/li&gt;
+  &lt;li&gt;Word2Vec &amp;amp; Glove&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;tf-idf&quot;&gt;TF-IDF&lt;/h5&gt;
+
+&lt;p&gt;统计每个词的词频并归一化（防止倾向于长文档）：&lt;/p&gt;
+
+\[TF(w_i) = \frac{count(w_i)}{\sum_jcount(w_j)}\]
+
+&lt;p&gt;然后筛去出现频率高且与主题相关性低的词，同时增加与主题相关性强的词的权重：&lt;/p&gt;
+
+\[IDF(w_i) = log(\frac{语料库中文档总数}{包含w_i的文档数+eps})\]
+
+&lt;p&gt;eps是防止分母为0的，一般取1。&lt;/p&gt;
+
+&lt;p&gt;定义TF-IDF为：&lt;/p&gt;
+
+\[TF-IDF = TF \times IDF\]
+
+&lt;p&gt;相比于之前的词袋模型，TF-IDF显著降低了普遍出现的词的权重（如的，了，是），增加了有标志性词的权重。在文档的关键词提取中，按照TF-IDF值排序，靠前的可以视为文章的关键词。&lt;/p&gt;
+
+&lt;p&gt;TF-IDF的优点是简单快速，缺点是上述对”重要性“的定义不够全面，可能不能适应一些情景。另外，该方法假设了词之间的独立性，缺少语义信息。&lt;/p&gt;
+
+&lt;p&gt;还有一种预处理方式是组合特征，如借助GBDT+LR：先用GBDT训练模型，得到解释性良好的特征集合，再将组合特征与原特征一起训练。&lt;/p&gt;
+
+&lt;h2 id=&quot;特征选择&quot;&gt;特征选择&lt;/h2&gt;
+
+&lt;p&gt;特征选择的目的是选出对任务有意义的特征输入机器学习模型，通常要考虑特征的：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;分布情况：如果一个特征的方差相对很小，&lt;strong&gt;可能&lt;/strong&gt;说明样本在这个特征上几乎没有差异，是一个无效特征。&lt;/li&gt;
+  &lt;li&gt;与目标的相关性。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;filter&quot;&gt;Filter&lt;/h3&gt;
+
+&lt;p&gt;对特征评分，设置阈值，选择高于（或低于）阈值的特征。&lt;/p&gt;
+
+&lt;p&gt;这种方法的缺点是假设了特征的独立性，有可能将有用的关联特征也过滤掉。&lt;/p&gt;
+
+&lt;p&gt;对于分类问题，可采用卡方检验和互信息法。&lt;/p&gt;
+
+&lt;p&gt;对于回归问题，可以采用皮尔森相关系数和最大信息系数。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;方差选择法&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;计算每个特征的方差，根据阈值选择方差大于阈值的特征。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;相关系数法&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;先要计算各个特征对目标值的相关系数以及相关系数的P值。&lt;/p&gt;
+
+&lt;p&gt;给定一组样本数据$(X_i. Y_i)$：&lt;/p&gt;
+
+\[COV(X, Y) = E[(X-E(X))(Y-E(Y))] = E(XY)-E(X)E(Y)\]
+
+&lt;p&gt;协方差为正时，二者正相关，为负时负相关。为了消除随机变量取值的影响，除以标准差以单位化（值域为[-1, 1]）：&lt;/p&gt;
+
+\[\begin{align}
+r &amp;amp;= \frac{COV(X,Y)}{\sigma _X \sigma_Y} \\ &amp;amp;= \frac{\sum_{i=1}^n(X_i-\overline X)(Y_i-\overline Y)}{\sqrt{\sum_{i=1}^n(X_i-\overline X)^2}\sqrt{\sum_{i=1}^n(Y_i-\overline Y)^2}}
+\end{align}\]
+
+&lt;p&gt;这种相关系数是线性相关系数，在非线性条件下表现可能不佳。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;卡方检验&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;是一种假设检验，要给出显著性水平$\sigma$，也可以用其他检验如T-检验，Z-检验，要根据数据分布确定。&lt;/p&gt;
+
+&lt;p&gt;经典的卡方检验是检验定性自变量对定性因变量的相关性。假设自变量有N种取值，因变量有M种取值，考虑自变量等于i且因变量等于j的样本频数的观察值与期望的差距，构建统计量：&lt;/p&gt;
+
+\[\chi^2 = \sum\frac{(A-E)^2}{E}\]
+
+&lt;p&gt;其中A是实际值（实际频数），E是假设自变量与因变量独立时的理论频数。这个统计量用于衡量实际值和理论值的差异程度，包含了以下两个信息：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;实际值与理论值偏差的绝对大小（由于平方的存在，差异是被放大的）&lt;/li&gt;
+  &lt;li&gt;差异程度与理论值的相对大小&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.pianshen.com/article/6812117772/&quot;&gt;统计学-卡方检验与卡方分布 - 程序员大本营 (pianshen.com)&lt;/a&gt; （其中喝牛奶的例子有点错误）&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;互信息与最大信息系数&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youth-49.github.io/2022/02/MI-MIC/&quot;&gt;Mutual Information and Maximum Information Coeffient (youth-49.github.io)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/2022-02-07-feature-engineer.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;wrapper&quot;&gt;Wrapper&lt;/h3&gt;
+
+&lt;p&gt;根据目标函数，每次选择若干特征或排除若干特征。&lt;/p&gt;
+
+&lt;p&gt;（转）Wrapper 这一类特征选择方法，应该来说是比较科学的，但是也是非常耗时，工业界在生产环境中很少使用，非常耗时，也是一个 NP 复杂的问题，一般通过不断迭代，然后每次加入一个特征，来训练模型，使用模型评估比如 AUC 或者 MSE 等函数评估是否将特征加入到特征子集中。&lt;/p&gt;
+
+&lt;p&gt;递归消除特征法使用一个基模型来进行多轮训练，每轮训练后，移除若干权值系数的特征，再基于新的特征集进行下一轮训练。&lt;/p&gt;
+
+&lt;p&gt;sklearn官方解释：对特征含有权重的预测模型(例如，线性模型对应参数coefficients)，RFE通过递归减少考察的特征集规模来选择特征。首先，预测模型在原始特征上训练，每个特征指定一个权重。之后，那些拥有最小绝对值权重的特征被踢出特征集。如此往复递归，直至剩余的特征数量达到所需的特征数量。&lt;/p&gt;
+
+&lt;p&gt;RFECV 通过交叉验证的方式执行RFE，以此来选择最佳数量的特征：对于一个数量为d的feature的集合，他的所有的子集的个数是2的d次方减1(包含空集)。指定一个外部的学习算法，比如SVM之类的。通过该算法计算所有子集的validation error。选择error最小的那个子集作为所挑选的特征。&lt;/p&gt;
+
+&lt;h3 id=&quot;embedded&quot;&gt;Embedded&lt;/h3&gt;
+
+&lt;p&gt;先使用某些机器学习算法或模型进行训练，得到各个特征的权值系数，根据系数选择特征。有些机器学习方法本身就具有对特征进行打分的机制，或者很容易将其运用到特征选择任务中，例如回归模型，SVM，决策树，随机森林等等。&lt;/p&gt;
+
+&lt;p&gt;（1）回归模型&lt;/p&gt;
+
+&lt;p&gt;回归模型最终会训练出各特征的权重，组成一个回归方程，则可以根据回归方程中的权重进行筛选，剔除一些较小的权重。&lt;/p&gt;
+
+&lt;p&gt;（2）SVM&lt;/p&gt;
+
+&lt;p&gt;SVM最终的分界函数是由边界上的点（特征）决定的，也就是说这些特征是比较重要的，其它特征则可以结合业务情况进行相应的删减。&lt;/p&gt;
+
+&lt;p&gt;（3）决策树&lt;/p&gt;
+
+&lt;p&gt;决策树结点的构建顺序和特征的重要性有关，则可以根据情况将一些靠近叶子结点的特征进行删减。&lt;/p&gt;
+
+&lt;p&gt;（4）随机森林&lt;/p&gt;
+
+&lt;p&gt;随机森林进行特征重要性评估，可以借助oob估计，通过对特征引入噪音，如果模型效果降低，则说明该特征较为重要。&lt;/p&gt;
+
+&lt;p&gt;（5）GBDT&lt;/p&gt;
+
+&lt;p&gt;先计算单棵树中特征分裂后损失的减少值，然后计算出多棵树的均值，即可比较出特征的重要性。&lt;/p&gt;
+
+&lt;p&gt;（6）XGboost&lt;/p&gt;
+
+&lt;p&gt;XGboost是通过该特征每棵树中分裂次数的和去计算的，比如这个特征在第一棵树分裂1次，第二棵树2次……，那么这个特征的得分就是(1+2+…)。&lt;/p&gt;
+
+&lt;p&gt;（7）基于惩罚项的特征选择&lt;/p&gt;
+
+&lt;p&gt;L1正则化具有截断性，L2正则化具有缩放效应，所以我们可以很好的利用线性模型的两种正则化选择特征。使用L1范数作为惩罚项的线性模型(Linear models)会得到稀疏解：大部分特征对应的系数为0。即起到了减少特征的作用。&lt;/p&gt;
+
+&lt;p&gt;以上均可借助sklearn.feature_selection实现：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;类&lt;/th&gt;
+      &lt;th&gt;所属方式&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;VarianceThreshold&lt;/td&gt;
+      &lt;td&gt;Filter&lt;/td&gt;
+      &lt;td&gt;方差选择法&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SelectKBest&lt;/td&gt;
+      &lt;td&gt;Filter&lt;/td&gt;
+      &lt;td&gt;可选关联系数、卡方校验、最大信息系数作为得分计算的方法&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RFE&lt;/td&gt;
+      &lt;td&gt;Wrapper&lt;/td&gt;
+      &lt;td&gt;递归地训练基模型，将权值系数较小的特征从特征集合中消除&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SelectFromModel&lt;/td&gt;
+      &lt;td&gt;Embedded&lt;/td&gt;
+      &lt;td&gt;训练基模型，选择权值系数较高的特征&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;降维&quot;&gt;降维&lt;/h2&gt;
+
+&lt;p&gt;可能由于特征矩阵过大，导致计算量大，训练时间长的问题，因此降低特征矩阵维度也是必不可少的。常见的降维方法除了以上提到的基于L1惩罚项的模型以外，另外还有主成分分析法（PCA）和线性判别分析（LDA），线性判别分析本身也是一个分类模型。PCA和LDA有很多的相似点，其本质是要将原始的样本映射到维度更低的样本空间中，但是PCA和LDA的映射目标不一样：&lt;strong&gt;PCA是为了让映射后的样本具有最大的发散性；而LDA是为了让映射后的样本有最好的分类性能&lt;/strong&gt;。所以说PCA是一种无监督的降维方法，而LDA是一种有监督的降维方法。&lt;/p&gt;</content><author><name>Yan Guochen</name></author><summary type="html">数据和特征的质量决定了机器学习的上限。</summary></entry><entry><title type="html">关于2021年的几句话</title><link href="http://localhost:4000/talk1/" rel="alternate" type="text/html" title="关于2021年的几句话" /><published>2022-01-31T07:40:00-08:00</published><updated>2022-01-31T07:40:00-08:00</updated><id>http://localhost:4000/talk1</id><content type="html" xml:base="http://localhost:4000/talk1/">&lt;p&gt;现在是2022年1月31日，晚23点43分，在忻州市定襄县河边镇姥姥姥爷住过的房子里。&lt;/p&gt;
+
+&lt;p&gt;本来是不会写这些东西的，虽然有时也有分享的欲望，但是真正措辞时又觉得不足挂齿，发出来让大家看有点不好意思。现在有一个自己的博客，而且过去一年（2021）确实也发生了不少事情，我认为有必要记录一下面对这些事情时的心情，还挺有借鉴意义的（至少现在这么觉得）。&lt;/p&gt;
+
+&lt;p&gt;21年年初疫情，大二上的期末考试也是在这间房子里考的，大学物理、电路分析、数据结构、离散数学，压力确实有点大，感觉复习不完了。最后一天考完离散数学，听着万能青年旅店的新专——特别是《山雀》——出门朝山上走去，没走太远，走到路上都是牛羊粪就回去了。没有很开心很激动，仅仅是松了口气。&lt;/p&gt;
+
+&lt;p&gt;然后寒假就摸了，本来计划着把大创做一下，然后把那本”鱼书“看完，学托福，假期末尾考一次。结果大创就瞎拼了个vue的前端demo出来，鱼书是在除夕，一个人实在没意思翻着看了，至于托福是一直拖着，多少心里是有点抗拒的。最后考前勉强做了几份阅读和听力，考试五天前回太原，回去模考了一两次。最后考了89。&lt;/p&gt;
+
+&lt;p&gt;没有想到考试五天前回太原，是最后一面。或许可以不那么着急呢？我们总是在想”如果”，如果当时不那么做，或者那么做了，事情究竟会怎么样？没有人知道。疫情延迟开学了三周，第三周回去送行，回来就去北京了。&lt;/p&gt;
+
+&lt;p&gt;大二下课很多，但是把学生工作摸了，周末又不用上托福课，反而感觉一周能有一个双休日真是太好了。周二上一门算法与计算理论，晚上把算法导论上对应章节粗略看一遍，受益良多，可惜现在可能记得不多了，留下的痕迹大概就是一份电子笔记了。还抽了一个周末把王小波的《红拂夜奔》看了，好有趣。上了大学不怎么看书，看也觉得没意思，看不进去。这本书真的带给我小时候看书的心境。初夏，洗了澡出来在社区看书，很舒服。&lt;/p&gt;
+
+&lt;p&gt;最优化方法是我目前为止最喜欢的一门课，很感谢余皓然老师，大善人。清明节把这门课的大作业做了（现在想来这居然是我第一次正经用Python写点东西），跟着青藤社去奥森跑了个步，很有意思，大家人都很好。&lt;/p&gt;
+
+&lt;p&gt;后半学期有点suffer了，从五月中下旬到最后，一刻不停，最后12天考6门，太紧张了，最后考离散数学前一天晚上已经麻了。好在最后考的还不错。&lt;/p&gt;
+
+&lt;p&gt;对了，这个学期还申了港校的交换，我是真的很想去啊，可惜名额就两个，优先大三，面试16个人，只有我是大二了，笑了。着急忙慌得准备材料、打听信息，可是越准备，越觉得希望渺茫，唉。不过好像最后因为疫情交换项目又取消了，sigh。&lt;/p&gt;
+
+&lt;p&gt;还申了一个北卡的六周的暑研项目，和朋友组队，算是第一次正经接触深度学习，以及英文开会。虽然现在看来有点水，但是它确实让我大概明白了搞深度学习大概是个什么样子，感恩，哈哈。&lt;/p&gt;
+
+&lt;p&gt;暑假总共就七周左右，六周做了暑研，期间还报了个口语班，开了学又请假回太原考了一次托福，考了96。算下来假期也没怎么正经休息，小学期还熬大夜，可能是大三上一开学就觉得疲倦的原因吧。&lt;/p&gt;
+
+&lt;p&gt;大三上课少，比较轻松。9月报Mitacs折腾了一阵子。之前暑假找校内的老师要了点活，一直做着。十月底翻到北大实验室的广告还有达特茅斯学院的，投了简历，最后决定去王选所（可为什么达特茅斯不回信呢）。然后事情就多了，课内结课，校内实验室，王选所。心里也愈发觉得疲倦。其实每天也不算很忙，但就是心里事多，再加上可能一直心里没有彻底地、好好地放松，疲倦堆积起来，可能已经变成别的情绪了，觉得每天没什么盼望的，每天没什么高兴的。学总是学不进去，干别的要么没啥好做的，要么不好意思浪费时间。手上的事情多，又不能不做，很难受，感觉压力很大。一月初考完，也还是一样的心理状态，加上又要考托福了，还又分了个手，更难受了。白天还好，学一半摸一半，到晚上就觉得心里压抑得慌，恶心，学不进去。觉得事情多，恨不得一天掰成三天，又学不进去，很懊恼、焦虑。又觉得自己费这么大劲，图啥呢？好像未来也没有很光明，实在没什么盼头和期望。&lt;/p&gt;
+
+&lt;p&gt;这一两年来，每次压力大，或者事情多的时候，就会一边做事情，一边听李志、华北浪革、万能青年旅店的歌。发现了不少好歌：李志的《定西》、《墙上的向日葵》、《杭州》、《门》，华北浪革的《深海》等，还有Hello Nico的歌，房东的猫的《此刻是不会再拥有的此刻》，《爱你就像爱生命》，崔健的《新长征路上的摇滚》等等。&lt;/p&gt;
+
+&lt;p&gt;哦，8、9月份也是经历了美国签证心理的过山车，当时一度闹出些动静，好像真的有迹象了，但是到现在也没实际的动作，唉。&lt;/p&gt;
+
+&lt;p&gt;哦对了，十一月份还有Mitacs的面试，真是诡异得匹配机制…最后收到SFU得offer，差强人意。十一月份案件也开庭了，十一月一审，十二月二审，十二月底拿到的终审判决。笑，2020年秋立案，2021年12月30日才终审判决，大学四年也不过是两三场官司的长度（笑）。不管如何，也算是独特的人生经历，不过我也没出庭啥的，全托了属于是。&lt;/p&gt;
+
+&lt;p&gt;还有，我也一样没想到，国庆十月一号二号离开这里，也是最后一面。唉，现在有种，向之所欣，犹以为陈迹的感概。&lt;/p&gt;
+
+&lt;p&gt;压力、焦虑、疲惫、抗拒、失望的情绪在一月中旬达到顶峰，只能通过躺在床上缓解，学是一点都学不进去。为此还专门把B站下回来了，就是为了吸引注意力，让自己别多想，多看看小视频傻乐呵乐呵。后来好一些，然后22号去考托福，实在不报什么期望，复习时间短，还都用来摸鱼摆烂和调整心态上了。结果考的还不错，或许运气好吧，104（29-29-22-24），Big relief. 唉，让我运气好点又如何，已经有点倒霉了这么多次，难道以后不能做个运气小子吗？&lt;/p&gt;
+
+&lt;p&gt;这差不多就是到22年1月31日的事情了。这些事情现在看来已经都是小事了，但是心情上的问题是需要引起注意的。我明显觉得这一年里逐渐失去激情和热情，变得有点麻木，没有期望，缺乏动力。自己粗略总结，第一是给自己安排的任务太多，尽管勤奋的话完全可以应对的过来，但是不能只靠勤奋，一直靠勤奋。事实上我也不是一个勤奋的人，休息是很重要的。以后一定要给自己留出足够的休息和娱乐时间，脱离学习这个状态和圈子，多接触接触新鲜事物，要时刻输入刺激和吸引人的未知感。第二是想得太多，压力太大，属于是个人性格得一部分了，也是一种缺点，内耗太严重，自己与自己的矛盾很多，想要实现的东西往往很高，又不能接受实现不了的事实。其实实现不了又如何呢？本身就是求上者居中的事情，不如意者十之八九，大多数都很难按照理想的进行。再说未必是坏事，或许有更好的安排呢？再退一步，说不定真的能实现呢。第三是不要太认真，不要太较劲，不管是自己的学业，还是和女朋友的相处，差不多就行了，一起玩玩高兴高兴，一开始就惦记这个惦记那个，解决这个问题，解决那个问题，很累，又不一定有好结果。不得不说这段情感经历确实带给我不少快乐和放松，但是最后以我完全没想到的方式结束。我不理解，我只能理解。所以发现，事情怎么发展，我很难左右，不如享受现在就好了，以后真有什么问题不行就算了。以后行或不行，也未必和我现在这么认真有什么关系。&lt;/p&gt;
+
+&lt;p&gt;我不是一个勤奋的人，不是一个多么有信仰和理想的人，不是一个高尚的人，也不算一个聪明人，和其他人相比，完全没有什么特殊的能力和才华，我应当认识到我只是万千大众中普通平凡的一个人。&lt;/p&gt;
+
+&lt;p&gt;22年打算多出去社交社交，多出去玩一玩，体验体验。大胆点，也多尝试尝试新的东西，实习、新的研究之类的。玩玩相机，骑骑车，爬爬山，跑跑步，享受此刻，此刻是不会再拥有的此刻了。&lt;/p&gt;
+
+&lt;p&gt;写于2022年2月1日，0点50分，于忻州市定襄县河边镇，姥姥姥爷曾住过的房间。&lt;/p&gt;</content><author><name>Yan Guochen</name></author><summary type="html">现在是2022年1月31日，晚23点43分，在忻州市定襄县河边镇姥姥姥爷住过的房子里。</summary></entry><entry><title type="html">Hello World</title><link href="http://localhost:4000/intro/" rel="alternate" type="text/html" title="Hello World" /><published>2022-01-09T01:00:00-08:00</published><updated>2022-01-09T01:00:00-08:00</updated><id>http://localhost:4000/intro</id><content type="html" xml:base="http://localhost:4000/intro/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/avater.jpeg&quot; style=&quot;zoom:33%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;outline&quot;&gt;Outline&lt;/h2&gt;
+
+&lt;p&gt;Use Github Page+Jekyll+markdown to build personal blog website.&lt;/p&gt;
+
+&lt;p&gt;Github respository: &lt;a href=&quot;https://github.com/Youth-49/Youth-49.github.io&quot;&gt;Youth-49/Youth-49.github.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Jekyll is based on ruby. Temlpate is Vno Jekyll.&lt;/p&gt;
+
+&lt;p&gt;Reference:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/sqchen/p/10757927.html&quot;&gt;使用github pages搭建个人博客 - 帅气陈吃苹果 - 博客园 (cnblogs.com)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/KNIGH_YUN/article/details/79774344&quot;&gt;搭建 Github Pages 个人博客网站_knight-yun的博客-CSDN博客_github pages 博客&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Configuration on my laptop:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ruby 2.7.5: &lt;a href=&quot;https://www.ruby-lang.org/en/downloads/&quot;&gt;Download Ruby (ruby-lang.org)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;gem: run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem&lt;/code&gt; in cmd to check installation&lt;/li&gt;
+  &lt;li&gt;jekyll: run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install jekyll&lt;/code&gt; to install jekyll&lt;/li&gt;
+  &lt;li&gt;bundler: run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install bundler&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle install&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll server&lt;/code&gt; to preview&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To support LaTex, add these codes in the file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes/head.html&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 数学公式 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/x-mathjax-config&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;MathJax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;tex2jax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;skipTags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;noscript&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;textarea&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;inlineMath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The introduction for this template is as follows(copied from its original posts):&lt;/p&gt;
+
+&lt;h4 id=&quot;whats-this&quot;&gt;What’s this&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/onevcat/vno-jekyll&quot;&gt;Vno Jekyll&lt;/a&gt; is a theme for &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;. It is a port of my Ghost theme &lt;a href=&quot;https://github.com/onevcat/vno&quot;&gt;vno&lt;/a&gt;, which is originally developed from &lt;a href=&quot;https://github.com/daleanthony/uno&quot;&gt;Dale Anthony’s Uno&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;usage&quot;&gt;Usage&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/onevcat/vno-jekyll.git your_site
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;your_site
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundler &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundler &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Your site with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Vno Jekyll&lt;/code&gt; enabled should be accessible in http://127.0.0.1:4000.&lt;/p&gt;
+
+&lt;p&gt;For more information about Jekyll, please visit &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll’s site&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;configuration&quot;&gt;Configuration&lt;/h4&gt;
+
+&lt;p&gt;All configuration could be done in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;. Remember you need to restart to serve the page when after changing the config file. Everything in the config file should be self-explanatory.&lt;/p&gt;
+
+&lt;h4 id=&quot;background-image-and-avatar&quot;&gt;Background image and avatar&lt;/h4&gt;
+
+&lt;p&gt;You could replace the background and avatar image in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets/images&lt;/code&gt; folder to change them.&lt;/p&gt;
+
+&lt;h4 id=&quot;post&quot;&gt;Post&lt;/h4&gt;
+
+&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Compared with normal code snippets powered by markdown:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;license&quot;&gt;License&lt;/h4&gt;
+
+&lt;p&gt;Great thanks to &lt;a href=&quot;https://github.com/daleanthony&quot;&gt;Dale Anthony&lt;/a&gt; and his &lt;a href=&quot;https://github.com/daleanthony/uno&quot;&gt;Uno&lt;/a&gt;. Vno Jekyll is based on Uno, and contains a lot of modification on page layout, animation, font and some more things I can not remember. Vno Jekyll is followed with Uno and be licensed as &lt;a href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;Creative Commons Attribution 4.0 International&lt;/a&gt;. See the link for more information.&lt;/p&gt;</content><author><name>Yan Guochen</name></author><summary type="html"></summary></entry></feed>

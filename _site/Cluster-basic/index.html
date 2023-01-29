@@ -1,0 +1,430 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>聚类基本知识 - Yan Guochen</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Yan Guochen">
+<meta property="og:title" content="聚类基本知识">
+
+
+  <link rel="canonical" href="http://localhost:4000/Cluster-basic/">
+  <meta property="og:url" content="http://localhost:4000/Cluster-basic/">
+
+
+
+  <meta property="og:description" content="1. 数据规范化">
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2022-02-23T20:00:00-08:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Yan Guochen",
+      "url" : "http://localhost:4000",
+      "sameAs" : null
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Yan Guochen Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="http://localhost:4000/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="http://localhost:4000/images/apple-touch-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="http://localhost:4000/images/apple-touch-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="http://localhost:4000/images/apple-touch-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="http://localhost:4000/images/apple-touch-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/images/apple-touch-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="manifest" href="http://localhost:4000/images/manifest.json?v=M44lzPylqQ">
+<link rel="mask-icon" href="http://localhost:4000/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="http://localhost:4000/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="http://localhost:4000/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/academicons.css"/>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="http://localhost:4000/">Yan Guochen</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/publications/">Publications</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/year-archive/">Blog Posts</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <h1 id="1-数据规范化">1. 数据规范化</h1>
+
+<h3 id="11-数据规范化的作用">1.1 数据规范化的作用</h3>
+
+<ol>
+  <li>
+    <p>不同特征具有不同的量纲，为消除量纲带来的影响，将不同分量的数据都约束在同一范围内，使得指标之间具有可比性或具有相同的权重。</p>
+  </li>
+  <li>
+    <p>消除离群点、奇异点数据对结果造成的不良影响。</p>
+  </li>
+  <li>
+    <p>在涉及梯度计算和反向传播的时候，可以加快训练，让损失函数的梯度等高线变得类球形，避免梯度下降轨迹弯弯曲曲（找一个两个自变量的损失函数推一推式子就能得到）。</p>
+  </li>
+  <li>
+    <p>有可能提高精度（KNN）和收敛性。</p>
+  </li>
+</ol>
+
+<h3 id="12-数据规范化的方法">1.2 数据规范化的方法</h3>
+
+<ul>
+  <li>max/min Normalization: 通过线性变化将数据映射到给定的区间范围内，如：</li>
+</ul>
+
+\[\hat v_i = \hat v_{min} + \frac{v_i - v_{min}}{v_{max} - v_{min}} (\hat v_{max} - \hat v_{min})\]
+
+<p>缺点是对离群点敏感，如果有显著的离群点，规范化的效果将会变差。</p>
+
+<ul>
+  <li>z-score Normalization</li>
+</ul>
+
+\[\hat v_i = \frac{v_i - \mu}{\sigma}\]
+
+<p>其中$\mu = \frac{1}{n}v_i, \sigma = \sqrt{\frac{1}{n}\sum_{i = 1}^{n}(v_i - \mu)^2}$</p>
+
+<p>将数据分布变化成期望为0，标准差（方差）为1的分布。对离群点不敏感。</p>
+
+<ul>
+  <li>非线性归一化。如利用对数函数，指数函数，sigmoid函数，反正切函数。</li>
+</ul>
+
+<h3 id="13-应用">1.3 应用</h3>
+
+<ol>
+  <li>概率模型不需要归一化，因为这种模型不关心变量的取值，而是关心变量的分布和变量之间的条件概率；</li>
+  <li>SVM、线性回归之类的最优化问题需要归一化，是否归一化主要在于是否关心变量取值；</li>
+  <li>神经网络需要标准化处理，一般变量的取值在-1到1之间，这样做是为了弱化某些变量的值较大而对模型产生影响。一般神经网络中的隐藏层采用tanh激活函数比sigmod激活函数要好些，因为tanh双曲正切函数的取值[-1,1]之间，均值为0.</li>
+  <li>在K近邻算法中，如果不对解释变量进行标准化，那么具有小数量级的解释变量的影响就会微乎其微。</li>
+</ol>
+
+<h2 id="2-常见聚类算法">2. 常见聚类算法</h2>
+
+<h3 id="21-直接聚类法">2.1 直接聚类法</h3>
+
+<p>是一种基于分层的聚类方法。先将每个点看作一类，每次找距离最近的两类，将他们合并为一类。N个类经过N-1次合并最终变为一类。根据归并的顺序，还可做出谱系图。可以指定距离阈值或聚类个数。</p>
+
+<h3 id="22-k-means">2.2 K-Means</h3>
+
+<p>是基于划分的无监督学习算法，是一种迭代的算法。基本思想是将点分配给距离最近的聚类中心，然后根据同一类中的点计算中心，作为新的聚类中心点。</p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/Cluster%20basic-1.png" alt="" /></p>
+
+<h4 id="理论分析">理论分析</h4>
+
+<p><strong>K-means基于的一个基本假设是，对于每一个类，可以找到一个中心点，使得这个类中点到这个类的中心点的距离比到其他类的中心点的距离近。</strong></p>
+
+<p>基于这个假设，K-means的损失函数被定义为：</p>
+
+\[\sum_{i = 1}^N \min_{u_j \in C}||x_i - \mu_j||^2 \\
+or \\
+\begin{aligned}
+L &amp;= L(X_1, \cdots, X_K, x_i, \cdots, x_N) \\
+  &amp;= \sum_{k=1}^K\sum_{x_i \in X_k} ||x_i - y_k||^2 \\
+\end{aligned}\]
+
+<p>算法分两步：确定${y_k}^K$，分配${x_i}^N$；确定${x_i}^N$，分配${y_k}^K$。</p>
+
+<ol>
+  <li>确定${y_k}^K$，分配${x_i}^N$。显然，将$x_i$分配给距离最近的$y_k$即可使损失函数$L$最小。</li>
+  <li>确定${x_i}^N$，分配${y_k}^K$。利用多元函数微分的知识：</li>
+</ol>
+
+\[\frac{\partial L(X_1, \cdots, X_K, x_i, \cdots, x_N)}{\partial y_k} = \sum_{x_i \in X_k}-2||x_i - y_k||\]
+
+<p>令$\frac{\partial L}{\partial y_k} = 0$，则有：</p>
+
+\[y_k = \frac{1}{|X_k|}\sum_{x_i \in X_k} x_i\]
+
+<p>即，$y_k = center(X_k)$.</p>
+
+<p>每一次迭代，损失函数都只减不增，最后收敛到一个局部最优点。</p>
+
+<p>K-means is equivalent to the expectation-maximization algorithm with a small, all-equal, diagonal covariance matrix.</p>
+
+<p>Time complexity: $O(NKT)$, 其中N是样本数，K是聚类数，T是迭代轮数。</p>
+
+<h4 id="影响结果的因素">影响结果的因素</h4>
+
+<ol>
+  <li>K的选取。K-means必须知道K的准确数值才能获得良好的表现。</li>
+  <li>初始中心点的选取。可以使用L-means++策略选取。</li>
+  <li>聚类的形状，需要满足基本假设</li>
+</ol>
+
+<h4 id="优缺点">优缺点</h4>
+
+<ol>
+  <li>当点是密集且类之前区分明显的情况，表现好；对于大型数据集，该算法可拓展性高，高效。</li>
+  <li>容易陷入局部最小点。</li>
+  <li>对离群点敏感，个别离群点在求聚类中心的时候会使得中心点的位置偏离。</li>
+  <li>只能发现球状的cluster。</li>
+  <li>inertia不是一个Normalized的指标，在高维空间中欧氏距离会变得很大（维数诅咒）。</li>
+</ol>
+
+<h3 id="23-dbscan">2.3 DBSCAN</h3>
+
+<p>是一种基于密度的聚类算法，核心思想是计算每个点的邻域内的邻居点数来衡量密度，可以找出不规则形状的聚类，且不需要事先知道聚类数。</p>
+
+<h4 id="基本概念">基本概念</h4>
+
+<p>参数有两个：1. eps($\epsilon$)，指邻域半径；2. MinPts(Minimal number of points required to form clusters, $\mathcal M$)。</p>
+
+<p>考虑数据集$\mathbf X = {x_i}_{i=1}^N$，有如下定义：</p>
+
+<ul>
+  <li>点x的$\epsilon$ 邻域</li>
+</ul>
+
+\[N_{\epsilon}(x) = \{x_i|d(x,x_i) \leq \epsilon \}\]
+
+<p>也可以记为：</p>
+
+\[N_{\epsilon}(i) = \{i|d(x,x_i) \leq \epsilon\}\]
+
+<ul>
+  <li>
+    <p>密度: $\rho(x) = {| N_{\epsilon}(x)|}$ .</p>
+  </li>
+  <li>Core point, 点x是core point，当且仅当$\rho(x) \geq \mathcal M$，将所有core points记为$X_c$，并记非核心点为$X_{nc} = X - X_c$.</li>
+  <li>Border point, 点x是border point（$x \in X_{bd}$），当且仅当$x \in X_{nc}$且$N_{\epsilon}(x) \cap X_c \neq \emptyset$，即非核心点x的邻域包含核心点，或非核心点x落在某个核心点的邻域。</li>
+  <li>Noise point，点x是noise point，当且仅当$x \in X - (X_c \cup X_{bd})$. 此时$X = X_c \cup X_{bd} \cup X_{noi}$.</li>
+  <li>Directly density-reachable:     设$x,y\in X$，若$y\in N_{\epsilon}(x)$且$x \in X_c$，则称y是从x直接密度可达的。</li>
+  <li>Density-reachable: 设$p_1, \cdots, p_m \in X, m \geq 2$，若满足$p_{i+1}$是由$p_i$<strong>直接密度可达的</strong>，则称点$p_m$是从点$p_1$密度可达。密度可达是直接密度可达的传递闭包。密度可达关系不具有对称性。</li>
+  <li>Density-connected: 设$x, y, z \in X$，若y,z均是从x密度可达的，则y，z密度相连。密度相连关系具有对称性。</li>
+  <li>Cluster: 若C是一个cluster，C满足：1.是X的非空子集，2. 若$x \in C$，y从x密度可达（Maximization），则$y \in C$，3. 若$x, y \in C$，则x和y密度相连（Connectivity）。</li>
+</ul>
+
+<h4 id="算法流程">算法流程</h4>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/Cluster%20basic-2.png" alt="" /></p>
+
+<p>该算法中，边界点的归属会受点的遍历顺序的影响。如果边界点的归属很重要，可以先将边界点标记出来，在最后分配给最近的类。</p>
+
+<h4 id="问题">问题</h4>
+
+<ol>
+  <li>$\epsilon$的选取。是一个固定的、统一的值，在过密的点中容易将多个聚类当作一类，在过疏的点中容易将一类分散成多类。对数据点的适应度不够。</li>
+  <li>参数$\mathcal M$的选择。$\mathcal M$有一个指导性原则，即$\mathcal M \geq dim+1$.</li>
+  <li>复杂度问题。时空复杂度为$O(N^2)$，可用kd tree等索引结构降为$O(NlogN)$ .</li>
+  <li>距离公式的选取。如果选用欧几里得距离，在维数增大的时候，由于curse of dimensionality，很难选到一个合适的$\epsilon$值。</li>
+</ol>
+
+<h3 id="24-optics">2.4 OPTICS</h3>
+
+<p>可以看作对DBSCAN的一种改进，使得DBSCAN对参数不那么敏感。 OPTICS不直接给出聚类结果，而是给出一个有序数组，包含了可以用来做聚类的信息。其中信息也可以用来做关联分析等。</p>
+
+<h4 id="基本概念-1">基本概念</h4>
+
+<p>大部分概念和DBSCAN一致。另给出两个概念：</p>
+
+<ul>
+  <li>Core distance，核心距离。设$x \in X$，使得x称为核心点的最小邻域半径为x的核心距离。</li>
+</ul>
+
+\[cd(x) = \left\{    \begin{array}{rcl}    Undefined     &amp;  |N_{\epsilon}(x) &lt; \mathcal M| \\    d(x, N_{\epsilon}^{\mathcal M}(x)     &amp; |N_{\epsilon}(x) \geq \mathcal M|    \end{array}\right.\]
+
+<p>其中$N_{\epsilon}^{i}(x)$指点x邻域中x距离第i近的点的距离。如果x本身是核心点，则$cd(x) \leq \epsilon$.</p>
+
+<ul>
+  <li>Reachable distance，可达距离。设$x, y \in X$，对于给定的参数$\epsilon$和$\mathcal M$，y关于x的可达距离为：</li>
+</ul>
+
+\[rd(y,x) = \left\{    \begin{array}{rcl}    Undefined     &amp;  |N_{\epsilon}(x) &lt; \mathcal M| \\    \max\{d(x, y), cd(x)\}     &amp; |N_{\epsilon}(x) \geq \mathcal M|    \end{array}\right.\]
+
+<p>特别的，当x是核心点时，y关于x的可达距离可以理解为：使得x是核心点且y是从x直接密度可达的点的最小邻域半径。        注： $rd(y,x)$的值与y所在空间的密度有关，密度越大，它从相邻节点直接密度可达的距离就越小．如果聚类时想要朝着数据尽量稠密的空间进行扩张，那么可达距离最小的点是最佳的选择．为此，OPTICS算法中用一个可达距离升序排列的有序种子队列存储待扩张的点，以迅速定位稠密空间的数据对象.</p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/Cluster%20basic-3.png" alt="" /></p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/Cluster%20basic-4.png" alt="" /></p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/Clsuter%20basic-5.png" alt="" /></p>
+
+<p>上面的算法处理完后，我们得到了输出结果序列，每个节点的可达距离和核心距离。我们以可达距离为纵轴，样本点输出次序为横轴进行可视化：</p>
+
+<p><img src="https://raw.githubusercontent.com/Youth-49/ImageHosting/main/img/Cluster%20basic-6.png" alt="" /></p>
+
+<p>x轴为输出序列p的点的编号，y轴是可达距离。</p>
+
+<p>簇在坐标轴中表述为山谷，并且山谷越深，簇越紧密。</p>
+
+<p>黄色代表的是噪声，它们不形成任何凹陷。</p>
+
+<p>OPTICS的核心思想：1) 较稠密簇中的对象在簇排序中相互靠近，2)一个对象的最小可达距离给出了一个对象连接到一个稠密簇的最短路径。 相对于DBSCAN，该算法对于距离阈值$\epsilon$的敏感性大大降低，这是因为：</p>
+
+<ol>
+  <li>在OPTICS算法中从输出得到的并不是直接的聚类结果，而是在$\epsilon$和$\mathcal M$下的有序队列，以及所有样本点的核心距离和可达距离。</li>
+  <li>在处理结果队列时，通过判断样本点的核心距离是否小于等于$\epsilon$实际上就是在判断该样本点是否是新半径$\epsilon^{‘}$的核心点，其中$\epsilon^{‘} &lt; \epsilon$。而两者都不满足的样本点一定会被认为是噪声，所以对于距离阈值，该算法有一定的不敏感性。</li>
+</ol>
+
+<p>OPTICS相当于将$\epsilon$改为动态的DBSCAN算法，可以进行多密度的聚类（因为ϵ$\epsilon$对于结果的影响较低，且输出中包含了关于可达距离的信息，可以辅助设置$\epsilon$) 综上，OPTICS可以在minPts固定的前提下，对于任意的$\epsilon^{‘}$(其中$\epsilon^{‘} \leq \epsilon$)都可以直接经过简单的计算得到新的聚类结果。 直观从结果图来看，以某一个可达距离$\epsilon$画平行于x轴的直线，当直线穿过几个山谷区域，最终就会得到几种簇（因为每一个山谷代表一种簇，或说一团高密度区域）。在此基础上，我们可以选择合适的可达距离$\epsilon$做为其它距离算法（例如DBSCAN）的初始参数设定从而进行聚类。从这个角度来看，OPTICS聚类算法也可以被认为是一种筛选最优距离阈值$\epsilon$的方法。</p>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<a href="/sitemap/">Sitemap</a>
+<!-- end custom footer snippets -->
+
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="http://github.com/Youth-49"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <li><a href="http://localhost:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Yan Guochen. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script src="http://localhost:4000/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  </body>
+</html>
+
