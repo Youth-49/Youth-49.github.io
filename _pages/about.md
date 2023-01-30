@@ -33,11 +33,11 @@ Education
 
 # Research
 
-- 2022 - Present: Research intern in PKU-DAIR Lab (Supervisor: Prof. Bin Cui, Peking University)
+- Research intern in PKU-DAIR Lab (Supervisor: Prof. Bin Cui, Peking University), 2022 - Present
   - Direction: Scalable Graph Neural Networks
-- 2022/08 - 2022/11: Mitacs research intern in Database System Lab (Supervisor: Prof. Jiannan Wang, Simon Farser University)
+- Mitacs research intern in Database System Lab (Supervisor: Prof. Jiannan Wang, Simon Farser University), 2022/08 - 2022/11
   - Direction: Data provenance tracking system
-- 2021/07 - 2021/08: Summer research in North Carolina State University (Supervisor: Prof. Min Chi)
+- Summer research in North Carolina State University (Supervisor: Prof. Min Chi), 2021/07 - 2021/08
   - Topic: Web page classification task, won final poster presentation winner.
 
 
