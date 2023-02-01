@@ -10,7 +10,7 @@ redirect_from:
 
 
 
-I'm now an undergraduate student in Beijing Institute of Technology, majoring computer science. During the study in BIT, I rank 1/86 in my school, and have a broad research interests including data mining, GNNs and its application, and federated learning.
+I'm now an undergraduate student in Beijing Institute of Technology, majoring in computer science. During the study in BIT, I rank 1/86 in my school, and have a broad research interests including data mining, GNN and its application, and federated learning.
 
 Feel free to contact me if interested to discuss ideas and work together.
 
