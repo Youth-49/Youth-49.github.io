@@ -20,7 +20,7 @@ Email: youth_49@163.com
 
 
 
-**Recent research areas: GNNs, Recommend system, Medical Data Analysis**
+**Recent research areas: GNNs, Recommend System, Medical Data Analysis**
 
 
 
