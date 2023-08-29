@@ -47,7 +47,7 @@ Education
 
 # Publications
 
-- A novel open-set clustering algorithm [[paper]](https://www.sciencedirect.com/science/article/pii/S0020025523011465) [[code]]([Youth-49/2023-DOS-IN (github.com)](https://github.com/Youth-49/2023-DOS-IN)), accepted by Information Sciences 2023 (as co-first author)
+- A novel open-set clustering algorithm [[paper]](https://www.sciencedirect.com/science/article/pii/S0020025523011465) [[code]](https://github.com/Youth-49/2023-DOS-IN), accepted by Information Sciences 2023 (as co-first author)
 
 
 
