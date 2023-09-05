@@ -19,6 +19,6 @@ author_profile: true
 
 ## [A novel open-set clustering algorithm](https://www.sciencedirect.com/science/article/pii/S0020025523011465) (co-first author)
 
-Published in Information Sciences, 2023
+To be published in Information Sciences, 2023
 
-The paper is about transforming cluster identification into irregular set identification. It is robust to various data distribution, more adaptive to overlapping and Gaussian clustering and more stable under different parameters, while preserves the ability to detect outliers.  It also outperforms other baseline methods in real world datasets in accuracy, running time and parameter sensitivity.
+The paper is about transforming cluster identification into irregular set identification. It is robust to various data distribution, more adaptive to overlapping and Gaussian clustering and more stable under different parameters, while preserves the ability to detect outliers. It also outperforms other baseline methods in real world datasets in accuracy, running time and parameter sensitivity.

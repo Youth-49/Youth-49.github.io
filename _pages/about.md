@@ -10,7 +10,7 @@ redirect_from:
 
 
 
-I'm now a first-year PhD candidate in Peking University. Before that, I got honor bachelor's degree in Beijing Institute of Technology with ranking top 1. I have a broad research interests including medical data mining, GNNs, and Federated learning.
+I'm now a first-year PhD candidate in Peking University. Before that, I got honor bachelor's degree in Beijing Institute of Technology with ranking top 1. I have a broad research interests including medical data mining, GNNs, and federated learning.
 
 Feel free to contact me if interested to discuss ideas and work together.
 
@@ -38,7 +38,7 @@ Education
 - Mitacs research intern in Database System Lab (Supervisor: Prof. Jiannan Wang, Simon Farser University), 2022/08 - 2022/11
   - Direction: Data provenance tracking system
 - Research on clustering algorithm (Supervisor: Dr. Qi Li and Prof. Shuliang Wang), 2021/09-2022/05
-  - Direction: Robust and  efficient clustering, outlier detection
+  - Direction: Robust and efficient clustering, outlier detection
   - One paper titled "A Novel Open-set Clustering Algorithm" has been accepted by *Information Sciences*
 - Summer research in North Carolina State University (Supervisor: Prof. Min Chi), 2021/07 - 2021/08
   - Topic: Web page classification task, won final poster presentation winner.
@@ -47,7 +47,7 @@ Education
 
 # Publications
 
-- A novel open-set clustering algorithm [[paper]](https://www.sciencedirect.com/science/article/pii/S0020025523011465) [[code]](https://github.com/Youth-49/2023-DOS-IN), accepted by Information Sciences 2023 (as co-first author)
+- A novel open-set clustering algorithm. [[paper]](https://www.sciencedirect.com/science/article/pii/S0020025523011465) [[code]](https://github.com/Youth-49/2023-DOS-IN), accepted by Information Sciences 2023 (as co-first author)
 
 
 
