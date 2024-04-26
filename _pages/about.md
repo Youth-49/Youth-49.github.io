@@ -35,6 +35,7 @@ Education
 
 - Research intern in PKU-DAIR Lab (Supervisor: Dr. Wentao Zhang and Prof. Bin Cui, Peking University), 2022 - 2023
   - Direction: Scalable Graph Neural Networks
+  - One paper titled "NPA: Improving Large-scale Graph Neural Networks with Non-parametric Attention" has been accepted by SIGMOD 2024
 - Mitacs research intern in Database System Lab (Supervisor: Prof. Jiannan Wang, Simon Farser University), 2022/08 - 2022/11
   - Direction: Data provenance tracking system
 - Research on clustering algorithm (Supervisor: Dr. Qi Li and Prof. Shuliang Wang), 2021/09-2022/05
@@ -45,6 +46,7 @@ Education
 
 # Publications
 
+- NPA: Improving Large-scale Graph Neural Networks with Non-parametric Attention. [[code]]([Youth-49/NPA (github.com)](https://github.com/Youth-49/NPA)), accepted by SIGMOD 2024 (as co-first author)
 - A novel open-set clustering algorithm. [[paper]](https://www.sciencedirect.com/science/article/pii/S0020025523011465) [[code]](https://github.com/Youth-49/2023-DOS-IN), accepted by Information Sciences 2023 (as co-first author)
 
 
