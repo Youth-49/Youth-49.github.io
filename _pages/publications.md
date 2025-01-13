@@ -33,6 +33,7 @@ The paper designs a plug-and-play non-parametric attention module called NPA to 
 
 ## [A novel open-set clustering algorithm](https://www.sciencedirect.com/science/article/pii/S0020025523011465)
 
-Published in *Information Sciences* in 2023
+Published in Information Sciences in 2023
 
 The paper is about transforming cluster identification into irregular set identification. The proposed clustering algorithm is robust to various data distribution, more adaptive to overlapping and Gaussian clustering and more stable under different parameters, while preserves the ability to detect outliers. It also outperforms other baseline methods in real world datasets in accuracy, running time and parameter sensitivity.
+
