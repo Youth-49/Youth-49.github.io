@@ -10,24 +10,38 @@ redirect_from:
 
 
 
-I'm now a first-year PhD candidate in Peking University. Before that, I got honor bachelor's degree in Beijing Institute of Technology with ranking top 1. I have a broad research interests including Graph models and federated learning.
+I'm now a second-year PhD candidate in Peking University. Before that, I got honor bachelor's degree in Beijing Institute of Technology with ranking top 1. I have a broad research interests including Trustworthy ML and Graph models.
 
 Feel free to contact me if interested to discuss ideas and work together.
 
 
 
-Email: youth_49@163.com
-
-
-
-**Recent research areas: Graph models and Federated learning**
+Email: guochen_yan@outloot.com
 
 
 
 Education
 ======
-- 2023/09 - : Peking University, school of computer science
-- 2019/09 - 2023/06: Beijing Institute of Technology, school of XUTELI, majoring in computer science
+- 2023/09 - : Peking University, School of Computer Science
+- 2019/09 - 2023/06: Beijing Institute of Technology, school of XuTeLi, majoring in computer science
+
+
+
+# Publications
+
+\* indicates equal contribution
+
+- FedVCK: Non-IID Robust and Communication-Efficient Federated Learning via Valuable Condensed Knowledge for Medical Image Analysis. AAAI 2025 [[paper]](https://arxiv.org/abs/2412.18557) [[code]](https://github.com/Youth-49/FedVCK_2024) 
+
+  Guochen Yan, Luyuan Xie, Xinyi Gao, Wentao Zhang, Qingni Shen, Yuejian Fang, Zhonghai Wu
+
+- NPA: Improving Large-scale Graph Neural Networks with Non-parametric Attention. SIGMOD 2024 [[paper]](https://dl.acm.org/doi/abs/10.1145/3626246.3653399)[[code]]([Youth-49/NPA (github.com)](https://github.com/Youth-49/NPA))
+
+  Wentao Zhang\*, Guochen Yan\*, Yu Shen, Yang Ling, Yangyu Tao, Bin Cui, Jian Tang
+
+- A novel open-set clustering algorithm. Information Sciences 2023 [[paper]](https://www.sciencedirect.com/science/article/pii/S0020025523011465) [[code]](https://github.com/Youth-49/2023-DOS-IN) 
+
+  Qi Li\*, Guochen Yan\*, Shuliang Wang, Boxiang Zhao
 
 
 
@@ -35,19 +49,12 @@ Education
 
 - Research intern in PKU-DAIR Lab (Supervisor: Dr. Wentao Zhang and Prof. Bin Cui, Peking University), 2022 - 2023
   - Direction: Scalable Graph Neural Networks
-  - One paper titled "NPA: Improving Large-scale Graph Neural Networks with Non-parametric Attention" has been accepted by SIGMOD 2024
 - Mitacs research intern in Database System Lab (Supervisor: Prof. Jiannan Wang, Simon Farser University), 2022/08 - 2022/11
   - Direction: Data provenance tracking system
 - Research on clustering algorithm (Supervisor: Dr. Qi Li and Prof. Shuliang Wang), 2021/09-2022/05
   - Direction: Robust and efficient clustering, outlier detection
-  - One paper titled "A Novel Open-set Clustering Algorithm" has been accepted by *Information Sciences* in 2023
 
 
-
-# Publications
-
-- NPA: Improving Large-scale Graph Neural Networks with Non-parametric Attention. [[code]]([Youth-49/NPA (github.com)](https://github.com/Youth-49/NPA)), accepted by SIGMOD 2024 (as co-first author)
-- A novel open-set clustering algorithm. [[paper]](https://www.sciencedirect.com/science/article/pii/S0020025523011465) [[code]](https://github.com/Youth-49/2023-DOS-IN), accepted by Information Sciences 2023 (as co-first author)
 
 
 
