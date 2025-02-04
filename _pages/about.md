@@ -10,19 +10,19 @@ redirect_from:
 
 
 
-I'm now a second-year PhD candidate in Peking University. Before that, I got honor bachelor's degree in Beijing Institute of Technology with ranking top 1. I have a broad research interests including Trustworthy ML and Graph models.
+I'm now a second-year PhD student in Peking University. Before that, I got an Honors Degree in Computer Science from Beijing Institute of Technology. I have a broad research interests including Trustworthy ML and Graph models.
 
 Feel free to contact me if interested to discuss ideas and work together.
 
 
 
-Email: guochen_yan@outloot.com
+Email: guochen_yan@outlook.com
 
 
 
 Education
 ======
-- 2023/09 - : Peking University, School of Computer Science
+- 2023/09 - present: Peking University, School of Computer Science
 - 2019/09 - 2023/06: Beijing Institute of Technology, school of XuTeLi, majoring in computer science
 
 
@@ -57,8 +57,8 @@ Education
   - Direction: Scalable Graph Neural Networks
 - Mitacs research intern in Database System Lab (Supervisor: Prof. Jiannan Wang, Simon Farser University), 2022/08 - 2022/11
   - Direction: Data provenance tracking system
-- Research on clustering algorithm (Supervisor: Dr. Qi Li and Prof. Shuliang Wang), 2021/09-2022/05
-  - Direction: Robust and efficient clustering, outlier detection
+- Research intern on clustering algorithm (Supervisor: Dr. Qi Li and Prof. Shuliang Wang, Beijing Institution of Technology), 2021/09-2022/05
+  - Direction: Robust and efficient clustering, outliers detection
 
 
 
@@ -69,12 +69,12 @@ Education
 - National Scholarship, 2020
 - Excellent Graduates, 2023
 - Multiple Academic Scholarship during 2020-2022
-- Excellent Student, 2020-2022
+- Excellent Student during 2020-2022
 
 
 
 # Skills
 
-- Programming language: Python, C++, Java
+- Programming language: Python, C/C++, Java
 - Framework: Pytorch
 - Tools: Git, LaTeX, Slurm
