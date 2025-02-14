@@ -39,7 +39,7 @@ Education
 
   **Guochen Yan**, Luyuan Xie, Xinyi Gao, Wentao Zhang, Qingni Shen, Yuejian Fang, Zhonghai Wu
 
-- **NPA: Improving Large-scale Graph Neural Networks with Non-parametric Attention. SIGMOD 2024 [[paper]](https://dl.acm.org/doi/abs/10.1145/3626246.3653399)[[code]]([Youth-49/NPA (github.com)](https://github.com/Youth-49/NPA))**
+- **NPA: Improving Large-scale Graph Neural Networks with Non-parametric Attention. SIGMOD 2024 [[paper]](https://dl.acm.org/doi/abs/10.1145/3626246.3653399)[[code]](https://github.com/Youth-49/NPA))**
 
   Wentao Zhang\*, **Guochen Yan\***, Yu Shen, Yang Ling, Yangyu Tao, Bin Cui, Jian Tang
 
