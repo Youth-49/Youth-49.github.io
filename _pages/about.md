@@ -31,7 +31,7 @@ Education
 
 \* indicates equal contribution
 
-- **dFLMoE: Decentralized Federated Learning via Mixture of Experts for Medical Data Analysis. CVPR 2025 [[paper]]([CVPR 2025 Open Access Repository](https://openaccess.thecvf.com/content/CVPR2025/html/Xie_dFLMoE_Decentralized_Federated_Learning_via_Mixture_of_Experts_for_Medical_CVPR_2025_paper.html))**
+- **dFLMoE: Decentralized Federated Learning via Mixture of Experts for Medical Data Analysis. CVPR 2025 [[paper]](https://openaccess.thecvf.com/content/CVPR2025/html/Xie_dFLMoE_Decentralized_Federated_Learning_via_Mixture_of_Experts_for_Medical_CVPR_2025_paper.html)**
 
   Luyuan Xie, Tianyu Luan, Wenyuan Cai, **Guochen Yan**, Zhaoyu Chen, Nan Xi, Yuejian Fang, Qingni Shen, Zhonghai Wu, Junsong Yuan
 
