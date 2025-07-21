@@ -19,6 +19,14 @@ author_profile: true
 
 
 
+## [**FedVCK: Non-IID Robust and Communication-Efficient Federated Learning via Valuable Condensed Knowledge for Medical Image Analysis**]([FedVCK: Non-IID Robust and Communication-Efficient Federated Learning via Valuable Condensed Knowledge for Medical Image Analysis | Proceedings of the AAAI Conference on Artificial Intelligence](https://ojs.aaai.org/index.php/AAAI/article/view/35497))
+
+Published in AAAI 2025
+
+The paper designs a novel federated learning method called FedVCK, which is non-IID robust and communication efficient. Departing from the conventional paradigm of model aggregation, FedVCK operates by aggregating condensed knowledge distilled from each client's local dataset. The quality of this condensed knowledge is ensured through a distribution matching mechanism enforced by Latent Distribution Constraints. To further augment the value and diversity of the collective knowledge, each client strategically selects hard samples—instances that are challenging for the current global model—thereby addressing deficiencies in current model's knowledge. Experimental results show FedVCK outperforms under severe non-IID scenarios under limited communication budget.
+
+
+
 
 
 ## [NPA: Improving Large-scale Graph Neural Networks with Non-parametric Attention](https://dl.acm.org/doi/abs/10.1145/3626246.3653399)

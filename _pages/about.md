@@ -10,7 +10,7 @@ redirect_from:
 
 
 
-I'm now a second-year PhD student in Peking University. Before that, I got an Honors Degree in Computer Science from Beijing Institute of Technology. I have a broad research interests including Trustworthy ML and Graph models.
+I'm now a second-year PhD student in Peking University. Before that, I got an Honors Degree in Computer Science from Beijing Institute of Technology. I have a broad research interests on Collaborative AI, including Multi-Agent System and Federated learning.
 
 Feel free to contact me if interested to discuss ideas and work together.
 
@@ -30,6 +30,10 @@ Education
 # Publications
 
 \* indicates equal contribution
+
+- **dFLMoE: Decentralized Federated Learning via Mixture of Experts for Medical Data Analysis. CVPR 2025 [[paper]]([CVPR 2025 Open Access Repository](https://openaccess.thecvf.com/content/CVPR2025/html/Xie_dFLMoE_Decentralized_Federated_Learning_via_Mixture_of_Experts_for_Medical_CVPR_2025_paper.html))**
+
+  Luyuan Xie, Tianyu Luan, Wenyuan Cai, **Guochen Yan**, Zhaoyu Chen, Nan Xi, Yuejian Fang, Qingni Shen, Zhonghai Wu, Junsong Yuan
 
 - **OpenFGL: A Comprehensive Benchmark for Federated Graph Learning. VLDB 2025 [[paper]](https://arxiv.org/abs/2408.16288) [[code]](https://github.com/xkLi-Allen/OpenFGL)** 
 
@@ -75,6 +79,6 @@ Education
 
 # Skills
 
-- Programming language: Python, C/C++, Java
-- Framework: Pytorch
+- Programming language: Python, C/C++
+- Framework: Pytorch, PyG, transformers, trl
 - Tools: Git, LaTeX, Slurm
