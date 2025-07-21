@@ -10,7 +10,7 @@ redirect_from:
 
 
 
-I'm now a second-year PhD student in Peking University. Before that, I got an Honors Degree in Computer Science from Beijing Institute of Technology. I have a broad research interests on Collaborative AI, including LLM-based Multi-Agent System and Federated learning.
+I'm now a second-year PhD student in Peking University. Before that, I got an Honors Degree in Computer Science from Beijing Institute of Technology. I have a broad research interests on Collaborative AI, including LLM-based Multi-Agent System and Federated Learning.
 
 Feel free to contact me if interested to discuss ideas and work together.
 

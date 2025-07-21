@@ -19,7 +19,7 @@ author_profile: true
 
 
 
-## [**FedVCK: Non-IID Robust and Communication-Efficient Federated Learning via Valuable Condensed Knowledge for Medical Image Analysis**](https://ojs.aaai.org/index.php/AAAI/article/view/35497)
+## [FedVCK: Non-IID Robust and Communication-Efficient Federated Learning via Valuable Condensed Knowledge for Medical Image Analysis](https://ojs.aaai.org/index.php/AAAI/article/view/35497)
 
 Published in AAAI 2025
 
