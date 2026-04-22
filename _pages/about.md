@@ -10,7 +10,7 @@ redirect_from:
 
 
 
-I'm now a second-year PhD student in Peking University. Before that, I got an Honors Degree in Computer Science from Beijing Institute of Technology. I have a broad research interests on Collaborative AI, including LLM-based Multi-Agent System and Federated Learning.
+I'm now a third-year PhD student in Peking University. Before that, I got an Honors Degree in Computer Science from Beijing Institute of Technology. I have a broad research interests on LLM Agent and Federated Learning.
 
 Feel free to contact me if interested to discuss ideas and work together.
 
@@ -30,26 +30,33 @@ Education
 # Publications
 
 \* indicates equal contribution
+{: .notice--info}
 
-- **dFLMoE: Decentralized Federated Learning via Mixture of Experts for Medical Data Analysis. CVPR 2025 [[paper]](https://openaccess.thecvf.com/content/CVPR2025/html/Xie_dFLMoE_Decentralized_Federated_Learning_via_Mixture_of_Experts_for_Medical_CVPR_2025_paper.html)**
+[Full publication list →](/publications/){: .btn .btn--primary .btn--small}
 
-  Luyuan Xie, Tianyu Luan, Wenyuan Cai, **Guochen Yan**, Zhaoyu Chen, Nan Xi, Yuejian Fang, Qingni Shen, Zhonghai Wu, Junsong Yuan
+### FedSRD: Sparsify-Reconstruct-Decompose for Communication-Efficient Federated Large Language Models Fine-Tuning (WWW 2026 Oral)
+**Guochen Yan**, Luyuan Xie, Qingni Shen, Yuejian Fang, Zhonghai Wu  
+[Paper](https://arxiv.org/abs/2510.04601){: .btn .btn--primary .btn--small} [Code](https://github.com/Youth-49/FedSRD_2025){: .btn .btn--inverse .btn--small}
 
-- **OpenFGL: A Comprehensive Benchmark for Federated Graph Learning. VLDB 2025 [[paper]](https://arxiv.org/abs/2408.16288) [[code]](https://github.com/xkLi-Allen/OpenFGL)** 
+### dFLMoE: Decentralized Federated Learning via Mixture of Experts for Medical Data Analysis (CVPR 2025)
+Luyuan Xie, Tianyu Luan, Wenyuan Cai, **Guochen Yan**, Zhaoyu Chen, Nan Xi, Yuejian Fang, Qingni Shen, Zhonghai Wu, Junsong Yuan  
+[Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Xie_dFLMoE_Decentralized_Federated_Learning_via_Mixture_of_Experts_for_Medical_Data_Analysis_CVPR_2025_paper.html){: .btn .btn--primary .btn--small}
 
-  Xunkai Li, Yinlin Zhu, Boyang Pang, **Guochen Yan**, Yeyu Yan, Zening Li, Zhengyu Wu, Wentao Zhang, Rong-Hua Li, Guoren Wang
+### OpenFGL: A Comprehensive Benchmark for Federated Graph Learning (VLDB 2025)
+Xunkai Li, Yinlin Zhu, Boyang Pang, **Guochen Yan**, Yeyu Yan, Zening Li, Zhengyu Wu, Wentao Zhang, Rong-Hua Li, Guoren Wang  
+[Paper](https://arxiv.org/abs/2408.16288){: .btn .btn--primary .btn--small} [Code](https://github.com/xkLi-Allen/OpenFGL){: .btn .btn--inverse .btn--small}
 
-- **FedVCK: Non-IID Robust and Communication-Efficient Federated Learning via Valuable Condensed Knowledge for Medical Image Analysis. AAAI 2025 [[paper]](https://arxiv.org/abs/2412.18557) [[code]](https://github.com/Youth-49/FedVCK_2024)** 
+### FedVCK: Non-IID Robust and Communication-Efficient Federated Learning via Valuable Condensed Knowledge for Medical Image Analysis (AAAI 2025)
+**Guochen Yan**, Luyuan Xie, Xinyi Gao, Wentao Zhang, Qingni Shen, Yuejian Fang, Zhonghai Wu  
+[Paper](https://arxiv.org/abs/2412.18557){: .btn .btn--primary .btn--small} [Code](https://github.com/Youth-49/FedVCK_2024){: .btn .btn--inverse .btn--small}
 
-  **Guochen Yan**, Luyuan Xie, Xinyi Gao, Wentao Zhang, Qingni Shen, Yuejian Fang, Zhonghai Wu
+### NPA: Improving Large-scale Graph Neural Networks with Non-parametric Attention (SIGMOD 2024)
+Wentao Zhang\*, **Guochen Yan\***, Yu Shen, Yang Ling, Yangyu Tao, Bin Cui, Jian Tang  
+[Paper](https://dl.acm.org/doi/abs/10.1145/3626246.3653399){: .btn .btn--primary .btn--small} [Code](https://github.com/Youth-49/NPA){: .btn .btn--inverse .btn--small}
 
-- **NPA: Improving Large-scale Graph Neural Networks with Non-parametric Attention. SIGMOD 2024 [[paper]](https://dl.acm.org/doi/abs/10.1145/3626246.3653399)[[code]](https://github.com/Youth-49/NPA)**
-
-  Wentao Zhang\*, **Guochen Yan\***, Yu Shen, Yang Ling, Yangyu Tao, Bin Cui, Jian Tang
-
-- **A novel open-set clustering algorithm. Information Sciences 2023 [[paper]](https://www.sciencedirect.com/science/article/pii/S0020025523011465) [[code]](https://github.com/Youth-49/2023-DOS-IN)** 
-
-  Qi Li\*, **Guochen Yan\***, Shuliang Wang, Boxiang Zhao
+### A novel open-set clustering algorithm (Information Sciences 2023)
+Qi Li\*, **Guochen Yan\***, Shuliang Wang, Boxiang Zhao  
+[Paper](https://www.sciencedirect.com/science/article/pii/S0020025523011465){: .btn .btn--primary .btn--small} [Code](https://github.com/Youth-49/2023-DOS-IN){: .btn .btn--inverse .btn--small}
 
 
 
@@ -80,5 +87,5 @@ Education
 # Skills
 
 - Programming language: Python, C/C++
-- Framework: Pytorch, PyG, transformers, trl
+- Framework: Pytorch, PyG, transformers, trl, swift-megatron
 - Tools: Git, LaTeX, Slurm

@@ -17,6 +17,11 @@ author_profile: true
 
 
 
+## [FedSRD: Sparsify-Reconstruct-Decompose for Communication-Efficient Federated Large Language Models Fine-Tuning](https://dl.acm.org/doi/10.1145/3774904.3792144)
+
+Published in WWW 2026
+
+The paper proposes a novel framework called FedSRD (Sparsify-Reconstruct-Decompose) to achieve communication-efficient federated fine-tuning for Large Language Models (LLMs). Addressing the massive communication overhead and aggregation conflicts in traditional federated LoRA methods, FedSRD introduces an importance-aware sparsification strategy that prunes parameters based on their contribution to the overall weight update, thereby preserving the structural integrity of LoRA matrices. On the server side, the framework reconstructs client updates in full-rank space to mitigate the detrimental effects of data heterogeneity (non-IID) and ensure mathematically sound aggregation. To complete a symmetrically efficient cycle, the server then decomposes the aggregated global update back into a sparse, low-rank format for broadcast to clients. Experimental results across 10 benchmarks demonstrate that FedSRD can reduce communication costs by up to 90% while simultaneously achieving superior performance compared to state-of-the-art baselines.
 
 
 ## [FedVCK: Non-IID Robust and Communication-Efficient Federated Learning via Valuable Condensed Knowledge for Medical Image Analysis](https://ojs.aaai.org/index.php/AAAI/article/view/35497)
