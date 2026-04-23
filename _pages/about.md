@@ -16,12 +16,12 @@ I'm a third-year Ph.D. student at Peking University (School of Computer Science)
 
 **Research interests:** LLM agents and federated learning.
 
+<p><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> <a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
+
 <p>
-  <a class="btn btn--primary btn--small" href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a>
   {% if author.googlescholar %}<a class="btn btn--inverse btn--small" href="{{ author.googlescholar }}"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i> Scholar</a>{% endif %}
   {% if author.github %}<a class="btn btn--inverse btn--small" href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a>{% endif %}
   <a class="btn btn--inverse btn--small" href="/publications/"><i class="fa fa-fw fa-link" aria-hidden="true"></i> Publications</a>
-  <a class="btn btn--inverse btn--small" href="/cv/"><i class="fa fa-fw fa-link" aria-hidden="true"></i> CV</a>
 </p>
 
 Feel free to contact me if you'd like to discuss ideas or collaborate.
@@ -33,8 +33,6 @@ Feel free to contact me if you'd like to discuss ideas or collaborate.
 ## Publications
 \* indicates equal contribution
 {: .notice--info}
-
-[Full publication list →](/publications/){: .btn .btn--primary .btn--small}
 
 ### FedSRD: Sparsify-Reconstruct-Decompose for Communication-Efficient Federated Large Language Models Fine-Tuning (WWW 2026 Oral)
 **Guochen Yan**, Luyuan Xie, Qingni Shen, Yuejian Fang, Zhonghai Wu  
