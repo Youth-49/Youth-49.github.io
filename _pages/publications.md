@@ -1,52 +1,55 @@
----
+﻿---
 layout: archive
 title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
 
+{% include base_path %}
+{% assign author = site.author %}
+
+\* indicates equal contribution
+{: .notice--info}
+
 {% if author.googlescholar %}
-  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
+[Google Scholar]({{ author.googlescholar }}){: .btn .btn--primary .btn--small}
 {% endif %}
 
-{% include base_path %}
+## Selected publications
+
+### FedSRD: Sparsify-Reconstruct-Decompose for Communication-Efficient Federated Large Language Models Fine-Tuning (WWW 2026)
+**Guochen Yan**, Luyuan Xie, Qingni Shen, Yuejian Fang, Zhonghai Wu  
+[ACM](https://dl.acm.org/doi/10.1145/3774904.3792144){: .btn .btn--primary .btn--small} [arXiv](https://arxiv.org/abs/2510.04601){: .btn .btn--inverse .btn--small} [Code](https://github.com/Youth-49/FedSRD_2025){: .btn .btn--inverse .btn--small}
+
+FedSRD (Sparsify-Reconstruct-Decompose) improves communication-efficient federated fine-tuning for LLMs by pruning client updates with an importance-aware strategy, reconstructing in full-rank space for robust aggregation under non-IID data, then decomposing back to sparse low-rank updates for broadcast.
+{: .notice}
+
+### FedVCK: Non-IID Robust and Communication-Efficient Federated Learning via Valuable Condensed Knowledge for Medical Image Analysis (AAAI 2025)
+**Guochen Yan**, Luyuan Xie, Xinyi Gao, Wentao Zhang, Qingni Shen, Yuejian Fang, Zhonghai Wu  
+[AAAI](https://ojs.aaai.org/index.php/AAAI/article/view/35497){: .btn .btn--primary .btn--small} [arXiv](https://arxiv.org/abs/2412.18557){: .btn .btn--inverse .btn--small} [Code](https://github.com/Youth-49/FedVCK_2024){: .btn .btn--inverse .btn--small}
+
+FedVCK aggregates condensed knowledge distilled from each client’s local dataset. It enforces latent distribution constraints and uses hard-sample selection to improve robustness and communication efficiency under severe non-IID settings.
+{: .notice}
+
+### NPA: Improving Large-scale Graph Neural Networks with Non-parametric Attention (SIGMOD/PODS 2024)
+Wentao Zhang\*, **Guochen Yan\***, Yu Shen, Yang Ling, Yangyu Tao, Bin Cui, Jian Tang  
+[ACM](https://dl.acm.org/doi/abs/10.1145/3626246.3653399){: .btn .btn--primary .btn--small} [Code](https://github.com/Youth-49/NPA){: .btn .btn--inverse .btn--small}
+
+NPA is a plug-and-play non-parametric attention module for scalable GNNs. It models feature relations within neighborhoods and across propagation steps to support better propagation and mitigate over-smoothing.
+{: .notice}
+
+### A novel open-set clustering algorithm (Information Sciences 2023)
+Qi Li\*, **Guochen Yan\***, Shuliang Wang, Boxiang Zhao  
+[ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0020025523011465){: .btn .btn--primary .btn--small} [Code](https://github.com/Youth-49/2023-DOS-IN){: .btn .btn--inverse .btn--small}
+
+This work transforms cluster identification into irregular set identification. The algorithm is robust across data distributions, adapts to overlapping and Gaussian clustering, detects outliers, and performs strongly on real-world datasets.
+{: .notice}
+
+{% if site.publications and site.publications.size > 0 %}
+## Full list
 
 {% for post in site.publications reversed %}
   {% include archive-single.html %}
 {% endfor %}
-
-
-
-## [FedSRD: Sparsify-Reconstruct-Decompose for Communication-Efficient Federated Large Language Models Fine-Tuning](https://dl.acm.org/doi/10.1145/3774904.3792144)
-
-Published in WWW 2026
-
-The paper proposes a novel framework called FedSRD (Sparsify-Reconstruct-Decompose) to achieve communication-efficient federated fine-tuning for Large Language Models (LLMs). Addressing the massive communication overhead and aggregation conflicts in traditional federated LoRA methods, FedSRD introduces an importance-aware sparsification strategy that prunes parameters based on their contribution to the overall weight update, thereby preserving the structural integrity of LoRA matrices. On the server side, the framework reconstructs client updates in full-rank space to mitigate the detrimental effects of data heterogeneity (non-IID) and ensure mathematically sound aggregation. To complete a symmetrically efficient cycle, the server then decomposes the aggregated global update back into a sparse, low-rank format for broadcast to clients. Experimental results across 10 benchmarks demonstrate that FedSRD can reduce communication costs by up to 90% while simultaneously achieving superior performance compared to state-of-the-art baselines.
-
-
-## [FedVCK: Non-IID Robust and Communication-Efficient Federated Learning via Valuable Condensed Knowledge for Medical Image Analysis](https://ojs.aaai.org/index.php/AAAI/article/view/35497)
-
-Published in AAAI 2025
-
-The paper designs a novel federated learning method called FedVCK, which is non-IID robust and communication efficient. Departing from the conventional paradigm of model aggregation, FedVCK operates by aggregating condensed knowledge distilled from each client's local dataset. The quality of this condensed knowledge is ensured through a distribution matching mechanism enforced by Latent Distribution Constraints. To further augment the value and diversity of the collective knowledge, each client strategically selects hard samples—instances that are challenging for the current global model—thereby addressing deficiencies in current model's knowledge. Experimental results show FedVCK outperforms under severe non-IID scenarios under limited communication budget.
-
-
-
-
-
-## [NPA: Improving Large-scale Graph Neural Networks with Non-parametric Attention](https://dl.acm.org/doi/abs/10.1145/3626246.3653399)
-
-Published in SIGMOD/PODS 2024
-
-The paper designs a plug-and-play non-parametric attention module called NPA to improve the performance of scalable GNNs. The key motivation is 1) consider the feature relationship between node itself and its neighborhood to support better propagation, 2) consider feature relationship between different propagation step in a node-adaptive manner to alleviate over-smoothing. Experiments show that NPA is compatible with most scalable GNN models and enable better performance, deeper architecture and high scalability.
-
-
-
-
-
-## [A novel open-set clustering algorithm](https://www.sciencedirect.com/science/article/pii/S0020025523011465)
-
-Published in Information Sciences in 2023
-
-The paper is about transforming cluster identification into irregular set identification. The proposed clustering algorithm is robust to various data distribution, more adaptive to overlapping and Gaussian clustering and more stable under different parameters, while preserves the ability to detect outliers. It also outperforms other baseline methods in real world datasets in accuracy, running time and parameter sensitivity.
+{% endif %}
 
