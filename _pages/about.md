@@ -3,32 +3,35 @@ permalink: /
 title: "About me"
 excerpt: "About me"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
+{% include base_path %}
+{% assign author = site.author %}
 
+<div class="notice--primary" markdown="1">
+I'm a third-year Ph.D. student at Peking University (School of Computer Science). Previously, I received an Honors Degree in Computer Science from Beijing Institute of Technology.
 
-I'm now a third-year PhD student in Peking University. Before that, I got an Honors Degree in Computer Science from Beijing Institute of Technology. I have a broad research interests on LLM Agent and Federated Learning.
+**Research interests:** LLM agents and federated learning.
+</div>
 
-Feel free to contact me if interested to discuss ideas and work together.
+<p>
+  <a class="btn btn--primary btn--small" href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a>
+  {% if author.googlescholar %}<a class="btn btn--inverse btn--small" href="{{ author.googlescholar }}"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i> Scholar</a>{% endif %}
+  {% if author.github %}<a class="btn btn--inverse btn--small" href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a>{% endif %}
+  <a class="btn btn--inverse btn--small" href="/publications/"><i class="fa fa-fw fa-link" aria-hidden="true"></i> Publications</a>
+  <a class="btn btn--inverse btn--small" href="/cv/"><i class="fa fa-fw fa-link" aria-hidden="true"></i> CV</a>
+</p>
 
+Feel free to contact me if you'd like to discuss ideas or collaborate.
 
+## Education
+- **2023/09 - present**: Peking University, School of Computer Science
+- **2019/09 - 2023/06**: Beijing Institute of Technology, XuTeLi School, Computer Science
 
-Email: guochen_yan@outlook.com
-
-
-
-Education
-======
-- 2023/09 - present: Peking University, School of Computer Science
-- 2019/09 - 2023/06: Beijing Institute of Technology, school of XuTeLi, majoring in computer science
-
-
-
-# Publications
-
+## Publications
 \* indicates equal contribution
 {: .notice--info}
 
@@ -58,34 +61,23 @@ Wentao Zhang\*, **Guochen Yan\***, Yu Shen, Yang Ling, Yangyu Tao, Bin Cui, Jian
 Qi Li\*, **Guochen Yan\***, Shuliang Wang, Boxiang Zhao  
 [Paper](https://www.sciencedirect.com/science/article/pii/S0020025523011465){: .btn .btn--primary .btn--small} [Code](https://github.com/Youth-49/2023-DOS-IN){: .btn .btn--inverse .btn--small}
 
-
-
-# Research
-
+## Research
 - Research intern in PKU-DAIR Lab (Supervisor: Dr. Wentao Zhang and Prof. Bin Cui, Peking University), 2023 - Now
   - Direction: Data-centric Large Language Models
 - Research intern in PKU-DAIR Lab (Supervisor: Dr. Wentao Zhang and Prof. Bin Cui, Peking University), 2022 - 2023
   - Direction: Scalable Graph Neural Networks
-- Mitacs research intern in Database System Lab (Supervisor: Prof. Jiannan Wang, Simon Farser University), 2022/08 - 2022/11
+- Mitacs research intern in Database System Lab (Supervisor: Prof. Jiannan Wang, Simon Fraser University), 2022/08 - 2022/11
   - Direction: Data provenance tracking system
-- Research intern on clustering algorithm (Supervisor: Dr. Qi Li and Prof. Shuliang Wang, Beijing Institution of Technology), 2021/09-2022/05
+- Research intern on clustering algorithm (Supervisor: Dr. Qi Li and Prof. Shuliang Wang, Beijing Institute of Technology), 2021/09 - 2022/05
   - Direction: Robust and efficient clustering, outliers detection
 
-
-
-
-
-# Awards
-
+## Awards
 - National Scholarship, 2020
 - Excellent Graduates, 2023
 - Multiple Academic Scholarship during 2020-2022
 - Excellent Student during 2020-2022
 
-
-
-# Skills
-
+## Skills
 - Programming language: Python, C/C++
 - Framework: Pytorch, PyG, transformers, trl, swift-megatron
 - Tools: Git, LaTeX, Slurm
