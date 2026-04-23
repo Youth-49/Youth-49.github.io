@@ -11,11 +11,10 @@ redirect_from:
 {% include base_path %}
 {% assign author = site.author %}
 
-<div class="notice--primary" markdown="1">
+
 I'm a third-year Ph.D. student at Peking University (School of Computer Science). Previously, I received an Honors Degree in Computer Science from Beijing Institute of Technology.
 
 **Research interests:** LLM agents and federated learning.
-</div>
 
 <p>
   <a class="btn btn--primary btn--small" href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a>
