@@ -15,8 +15,9 @@ redirect_from:
 
 <div class="home-intro">
   <p class="home-intro__eyebrow">Ph.D. Student · Peking University</p>
-  <p class="home-intro__lead">I'm a <strong>fourth-year Ph.D. student</strong> at Peking University (School of Computer Science). Previously, I received an Honors Degree in Computer Science from Beijing Institute of Technology.</p>
+  <p class="home-intro__lead">I'm a fourth-year Ph.D. student at Peking University (School of Computer Science). Previously, I received an Honors Degree in Computer Science from Beijing Institute of Technology.</p>
   <div class="home-intro__focus" aria-label="Research interests">
+    <span>Data/Model Mixture</span>
     <span>LLM Agents</span>
     <span>Federated Learning</span>
   </div>
