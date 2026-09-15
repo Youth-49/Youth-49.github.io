@@ -17,6 +17,13 @@ author_profile: true
 
 ## Selected publications
 
+### Exploring Information Seeking Agent Consolidation (EMNLP 2026 Findings)
+**Guochen Yan\***, Jialong Wu\*, Zhengwei Tao, Bo Li, Qintong Zhang, Jiahao Xu, Haitao Mi, Yuejian Fang, Qingni Shen, Wentao Zhang, Zhonghai Wu<br />
+[arXiv](https://arxiv.org/abs/2602.00585){: .btn .btn--primary .btn--small}
+
+This work systematically studies how to consolidate specialized information-seeking agents into a single foundation agentic model, comparing data-level mixing with 26 parameter-level merging methods across 10 benchmarks and 3 training scenarios.
+{: .notice}
+
 ### FedSRD: Sparsify-Reconstruct-Decompose for Communication-Efficient Federated Large Language Models Fine-Tuning (WWW 2026)
 **Guochen Yan**, Luyuan Xie, Qingni Shen, Yuejian Fang, Zhonghai Wu  
 [ACM](https://dl.acm.org/doi/10.1145/3774904.3792144){: .btn .btn--primary .btn--small} [arXiv](https://arxiv.org/abs/2510.04601){: .btn .btn--inverse .btn--small} [Code](https://github.com/Youth-49/FedSRD_2025){: .btn .btn--inverse .btn--small}
